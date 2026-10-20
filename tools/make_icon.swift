@@ -1,5 +1,5 @@
-// make_icon.swift - draws the app icon: original pixel art (a red boxing glove in
-// front of a boxing ring), no artwork from the game.
+// make_icon.swift - draws the app icon: original pixel art (four gold stars, one per game, over a
+// sky, a hill and brick ground), no artwork from the game.
 //
 //   swift tools/make_icon.swift <out.png> <size> [--full]
 //
@@ -17,99 +17,74 @@ func rgb(_ hex: UInt32) -> NSColor {
             blue: CGFloat(hex & 255) / 255, alpha: 1)
 }
 
-// 32 x 32 grid. Back to front: dark crowd, ring ropes, blue canvas, then the glove.
+// 32 x 32 grid. Back to front: sky, a green hill, brick ground, then four gold stars (one per game).
 var grid = [[UInt32?]](repeating: [UInt32?](repeating: nil, count: 32), count: 32)
 func fillRows(_ a: Int, _ b: Int, _ color: UInt32) { for r in a...b { for c in 0..<32 { grid[r][c] = color } } }
 
-// Crowd (rows 0-8): near-black, with a few lit faces and shirts in the dark.
-fillRows(0, 8, 0x16122C)
-fillRows(5, 8, 0x1F1A3C)
-let crowdColors: [UInt32] = [0x6A4A5E, 0x3E4C86, 0x7A5A48, 0x4C3E7A, 0x8A4A58]
-var seed = 7
-for (i, c) in stride(from: 1, to: 31, by: 3).enumerated() {
-    seed = (seed * 31 + 11) % 97
-    let row = 3 + (seed % 3)
-    let color = crowdColors[(i + seed) % crowdColors.count]
-    for (dr, dc) in [(0, 0), (0, 1), (1, 0), (1, 1)] { grid[row + dr][c + dc] = color }
-}
-// Spotlight glow across the top.
-for c in 0..<32 { grid[0][c] = (c / 4) % 2 == 0 ? 0x2A2450 : 0x1E1A3E }
+// Sky (rows 0-21): deeper blue at the top, lighter toward the horizon, in bands.
+let sky: [UInt32] = [0x2C5CD8, 0x3468E0, 0x3C76E8, 0x4884EE, 0x5692F2, 0x64A0F6, 0x74AEF8, 0x86BCFA]
+for r in 0...21 { fillRows(r, r, sky[min(r / 3, sky.count - 1)]) }
 
-// Ring backdrop between and behind the ropes (rows 9-21).
-fillRows(9, 21, 0x2B2150)
-// Ropes: red, white, red, each 2 rows with a highlight row on top and a shadow below.
-func rope(_ r: Int, _ light: UInt32, _ mid: UInt32, _ dark: UInt32) {
-    for c in 0..<32 { grid[r][c] = light; grid[r + 1][c] = mid; grid[r + 2][c] = dark }
-}
-rope(9, 0xFF8A7A, 0xE02A28, 0x8E1418)
-rope(14, 0xFFFFFF, 0xE8E8F0, 0x9AA0B8)
-rope(19, 0xFF8A7A, 0xE02A28, 0x8E1418)
-
-// Canvas (rows 22-31): blue mat with a lighter edge and darker floor.
-fillRows(22, 31, 0x2C60CC)
-for c in 0..<32 { grid[22][c] = 0x7AA8F4; grid[23][c] = 0x4A82E0 }
-fillRows(28, 31, 0x2450AC)
-for c in stride(from: 0, to: 32, by: 8) { for r in 24...31 { grid[r][c] = 0x2450AC } }
-
-// The glove: built from three shapes (fist, thumb, cuff), outlined and shaded in code.
-// Coordinates are (column, row) in grid cells, measured at the cell centers.
 func inEllipse(_ x: Double, _ y: Double, _ cx: Double, _ cy: Double, _ rx: Double, _ ry: Double) -> Bool {
     let dx = (x - cx) / rx, dy = (y - cy) / ry
     return dx * dx + dy * dy <= 1
 }
-func inRoundRect(_ x: Double, _ y: Double, _ x0: Double, _ y0: Double, _ x1: Double, _ y1: Double, _ r: Double) -> Bool {
-    if x < x0 || x > x1 || y < y0 || y > y1 { return false }
-    let cx = min(max(x, x0 + r), x1 - r), cy = min(max(y, y0 + r), y1 - r)
-    return (x - cx) * (x - cx) + (y - cy) * (y - cy) <= r * r
-}
-// Part ids: 0 none, 1 fist, 2 thumb, 3 cuff.
-func part(_ c: Int, _ r: Int) -> Int {
-    let x = Double(c) + 0.5, y = Double(r) + 0.5
-    if inRoundRect(x, y, 11, 21, 24, 29, 1.0) { return 3 }
-    if inEllipse(x, y, 9.5, 15, 4.6, 5.4) { return 2 }
-    if inEllipse(x, y, 17.5, 10.75, 8.8, 8.2) { return 1 }
-    if inRoundRect(x, y, 13, 14, 22, 21.5, 2) { return 1 }   // wrist, joins fist to cuff
-    return 0
-}
-let ink: UInt32 = 0x2A0A10
-let redLight: UInt32 = 0xFF6A58, red: UInt32 = 0xDC2424, redShade: UInt32 = 0x9C1620, crease: UInt32 = 0x5E0A14
-let white: UInt32 = 0xF6F6FA, whiteShade: UInt32 = 0xB4B8CC, band: UInt32 = 0xDC2424
-
-var parts = [[Int]](repeating: [Int](repeating: 0, count: 32), count: 32)
-for r in 0..<32 { for c in 0..<32 { parts[r][c] = part(c, r) } }
-func at(_ c: Int, _ r: Int) -> Int { (0..<32).contains(c) && (0..<32).contains(r) ? parts[r][c] : 0 }
-
-for r in 0..<32 {
+// Hill behind the ground, right side: outlined, with a lighter top.
+for r in 12...21 {
     for c in 0..<32 {
-        let p = parts[r][c]
-        if p == 0 { continue }
-        let nbrs = [at(c - 1, r), at(c + 1, r), at(c, r - 1), at(c, r + 1)]
-        // Outside edge of the whole glove: ink outline.
-        if nbrs.contains(0) { grid[r][c] = ink; continue }
-        // Thumb drawn in front of fist and cuff: crease line along its edge.
-        if p == 2 && nbrs.contains(where: { $0 != 2 }) { grid[r][c] = crease; continue }
-        // Fist next to the cuff: seam.
-        if p == 1 && nbrs.contains(3) { grid[r][c] = crease; continue }
         let x = Double(c) + 0.5, y = Double(r) + 0.5
-        switch p {
-        case 1:
-            let nx = (x - 17.5) / 8.8, ny = (y - 10.75) / 8.2
-            let light = -(nx * 0.7 + ny * 0.7)
-            grid[r][c] = light > 0.62 ? redLight : (light < -0.55 ? redShade : red)
-        case 2:
-            let nx = (x - 9.5) / 4.6, ny = (y - 15) / 5.4
-            let light = -(nx * 0.7 + ny * 0.7)
-            grid[r][c] = light > 0.45 ? redLight : (light < -0.3 ? redShade : red)
-        default:
-            // Cuff: white with a red band across the top and a shaded right side.
-            if r == 24 || r == 25 { grid[r][c] = c >= 22 ? redShade : band }
-            else if c >= 22 { grid[r][c] = whiteShade }
-            else { grid[r][c] = white }
-        }
+        guard inEllipse(x, y, 25, 25, 9, 8) else { continue }
+        let edge = !inEllipse(x, y, 25, 25, 8, 7)
+        grid[r][c] = edge ? 0x0C4A1C : (inEllipse(x, y, 23, 20.5, 3.5, 2.5) ? 0x5CD86C : 0x2CA844)
     }
 }
-// A highlight spot on the fist and thumb.
-for (c, r) in [(13, 4), (14, 4), (12, 5), (13, 5), (12, 6), (6, 12), (7, 11), (7, 12)] where parts[r][c] == 1 { grid[r][c] = 0xFFC8BC }
+
+// Ground (rows 22-31): bricks with dark mortar, a light top edge, rows offset by half a brick.
+fillRows(22, 31, 0xC85418)
+for c in 0..<32 { grid[22][c] = 0xF8A070 }
+for r in [26, 30] { for c in 0..<32 { grid[r][c] = 0x5A1E04 } }
+for r in 23...31 where r != 26 && r != 30 {
+    let shift = r < 26 ? 0 : (r < 30 ? 4 : 0)
+    for c in stride(from: shift, to: 32, by: 8) { grid[r][c] = 0x5A1E04 }
+}
+
+// Stars: five points, upright, outlined, lit from the top left.
+func inStar(_ x: Double, _ y: Double, _ cx: Double, _ cy: Double, _ R: Double) -> Bool {
+    let inner = R * 0.56
+    var pts: [(Double, Double)] = []
+    for i in 0..<10 {
+        let ang = -Double.pi / 2 + Double(i) * Double.pi / 5
+        let rad = i % 2 == 0 ? R : inner
+        pts.append((cx + rad * cos(ang), cy + rad * sin(ang)))
+    }
+    var inside = false
+    var j = pts.count - 1
+    for i in 0..<pts.count {
+        let (xi, yi) = pts[i], (xj, yj) = pts[j]
+        if (yi > y) != (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi { inside.toggle() }
+        j = i
+    }
+    return inside
+}
+let stars: [(Double, Double, Double)] = [(5.6, 13.0, 5.8), (12.4, 7.0, 5.8), (19.6, 13.0, 5.8), (26.4, 7.0, 5.8)]
+let ink: UInt32 = 0x5A3200, gold: UInt32 = 0xFFC820, goldLight: UInt32 = 0xFFF0A0, goldShade: UInt32 = 0xD88A08
+func starAt(_ c: Int, _ r: Int) -> Int? {
+    guard (0..<32).contains(c), (0..<32).contains(r) else { return nil }
+    let x = Double(c) + 0.5, y = Double(r) + 0.5
+    return stars.firstIndex { inStar(x, y, $0.0, $0.1, $0.2) }
+}
+for r in 0..<32 {
+    for c in 0..<32 {
+        guard let k = starAt(c, r) else { continue }
+        let nbrs: [Int?] = [starAt(c - 1, r), starAt(c + 1, r), starAt(c, r - 1), starAt(c, r + 1)]
+        if nbrs.contains(where: { $0 != k }) {
+            grid[r][c] = ink; continue
+        }
+        let (cx, cy, R) = stars[k]
+        let light = -((Double(c) + 0.5 - cx) * 0.7 + (Double(r) + 0.5 - cy) * 0.7) / R
+        grid[r][c] = light > 0.28 ? goldLight : (light < -0.22 ? goldShade : gold)
+    }
+}
 
 // Render: whole pixels only, so the art stays crisp.
 let rep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: size, pixelsHigh: size, bitsPerSample: 8,

@@ -7,10 +7,9 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 for d in build-game/check/route_*/; do
   r=$(basename "$d")
-  last=""; [ "$r" = route_lose ] && last=loss2
-  python3 tests/logic_digest.py "build-game/check/$r" $last | cut -d' ' -f1 > "tests/baseline/$r.logic.sha1"
+  python3 tests/logic_digest.py "build-game/check/$r" | cut -d' ' -f1 > "tests/baseline/$r.logic.sha1"
   cp "build-game/check/$r/digest.txt" "tests/baseline/$r.frames.sha1"
-  if [ "$r" = route_fight_gabby ]; then cp "build-game/check/$r/hashes.txt" "tests/baseline/$r.frames.csv"
+  if [ "$r" = route_smb1 ]; then cp "build-game/check/$r/hashes.txt" "tests/baseline/$r.frames.csv"
   else awk -F, '$1 % 50 == 0' "build-game/check/$r/hashes.txt" > "tests/baseline/$r.frames_every50.csv"; fi
   echo "recorded $r"
 done
