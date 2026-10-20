@@ -20,7 +20,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 NOTARIZE=0; [ "${1:-}" = "--notarize" ] && NOTARIZE=1
-ID="Developer ID Application"
+ID="Developer ID Application: Tanooki Studios LLC (NPT8NXJ7C8)"
 
 # Homebrew's SDL3/freetype/harfbuzz must never leak into the Mac build: they
 # are Apple-chip-only dylibs that other Macs do not have. Hide them from CMake;
