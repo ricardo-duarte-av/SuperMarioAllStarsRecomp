@@ -19,3 +19,5459 @@ addr = "82d8"
 bank = 0
 emit = false
 note = "Native NMI vector ($FFEA)"
+
+# >>> BEGIN coverage-promoted (written by tests/promote_from_coverage.py; do not hand-edit)
+[[func]]
+name = "fn_03_8000"
+addr = "8000"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_8003"
+addr = "8003"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_8015"
+addr = "8015"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_8205"
+addr = "8205"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_825F"
+addr = "825f"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_8308"
+addr = "8308"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_84B7"
+addr = "84b7"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_8545"
+addr = "8545"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_8555"
+addr = "8555"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_85BE"
+addr = "85be"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_85C3"
+addr = "85c3"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_85F3"
+addr = "85f3"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_866C"
+addr = "866c"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_868D"
+addr = "868d"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_86B4"
+addr = "86b4"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_86D9"
+addr = "86d9"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_871A"
+addr = "871a"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_87A4"
+addr = "87a4"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_87D3"
+addr = "87d3"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_883A"
+addr = "883a"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_8846"
+addr = "8846"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_8861"
+addr = "8861"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_8880"
+addr = "8880"
+bank = 3
+emit = true
+entry_m = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_8883"
+addr = "8883"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_8B07"
+addr = "8b07"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_8B30"
+addr = "8b30"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_8B45"
+addr = "8b45"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_8B91"
+addr = "8b91"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_8C18"
+addr = "8c18"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_8C3E"
+addr = "8c3e"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_8C50"
+addr = "8c50"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_8C6F"
+addr = "8c6f"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_8C7A"
+addr = "8c7a"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_8C7F"
+addr = "8c7f"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_8C83"
+addr = "8c83"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_8C8B"
+addr = "8c8b"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_8CFF"
+addr = "8cff"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_8D7B"
+addr = "8d7b"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_8E37"
+addr = "8e37"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_8E65"
+addr = "8e65"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_8EF1"
+addr = "8ef1"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_8F11"
+addr = "8f11"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_90FC"
+addr = "90fc"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_910F"
+addr = "910f"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_9213"
+addr = "9213"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_9224"
+addr = "9224"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_922D"
+addr = "922d"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_9271"
+addr = "9271"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_92E6"
+addr = "92e6"
+bank = 3
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_9351"
+addr = "9351"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_9352"
+addr = "9352"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_9384"
+addr = "9384"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_938E"
+addr = "938e"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_9390"
+addr = "9390"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_93C1"
+addr = "93c1"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_9B1D"
+addr = "9b1d"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_9B91"
+addr = "9b91"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_9B95"
+addr = "9b95"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_9BBC"
+addr = "9bbc"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_9C82"
+addr = "9c82"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_9C8D"
+addr = "9c8d"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_9CF1"
+addr = "9cf1"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_9CF9"
+addr = "9cf9"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_9D91"
+addr = "9d91"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_9E0C"
+addr = "9e0c"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_9E98"
+addr = "9e98"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_9EBA"
+addr = "9eba"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_9ED8"
+addr = "9ed8"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_9F3E"
+addr = "9f3e"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_9FBD"
+addr = "9fbd"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_A060"
+addr = "a060"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_A22B"
+addr = "a22b"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_A280"
+addr = "a280"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_A28F"
+addr = "a28f"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_A294"
+addr = "a294"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_A295"
+addr = "a295"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_A300"
+addr = "a300"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_A315"
+addr = "a315"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_A436"
+addr = "a436"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_A4C7"
+addr = "a4c7"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_A4E4"
+addr = "a4e4"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_A50E"
+addr = "a50e"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_A527"
+addr = "a527"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_A544"
+addr = "a544"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_A55B"
+addr = "a55b"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_A5CC"
+addr = "a5cc"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_A634"
+addr = "a634"
+bank = 3
+emit = true
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_A675"
+addr = "a675"
+bank = 3
+emit = true
+entry_x = 0
+note = "call target"
+
+[[func]]
+name = "fn_03_A693"
+addr = "a693"
+bank = 3
+emit = true
+entry_x = 0
+note = "call target"
+
+[[func]]
+name = "fn_03_A70D"
+addr = "a70d"
+bank = 3
+emit = true
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_A77D"
+addr = "a77d"
+bank = 3
+emit = true
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_A9F7"
+addr = "a9f7"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_AA39"
+addr = "aa39"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_AA4D"
+addr = "aa4d"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_AB63"
+addr = "ab63"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_AC05"
+addr = "ac05"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_AC0F"
+addr = "ac0f"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_AC38"
+addr = "ac38"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_AC3F"
+addr = "ac3f"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_AC70"
+addr = "ac70"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_ACB3"
+addr = "acb3"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_ACB6"
+addr = "acb6"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_ACC2"
+addr = "acc2"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_ACF6"
+addr = "acf6"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_AD60"
+addr = "ad60"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_AD70"
+addr = "ad70"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_AD74"
+addr = "ad74"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_AE00"
+addr = "ae00"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_AE4E"
+addr = "ae4e"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_AF0F"
+addr = "af0f"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_AF21"
+addr = "af21"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_AF42"
+addr = "af42"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_AFF4"
+addr = "aff4"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B010"
+addr = "b010"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B035"
+addr = "b035"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B129"
+addr = "b129"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B26E"
+addr = "b26e"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B290"
+addr = "b290"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B2A4"
+addr = "b2a4"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_B2AE"
+addr = "b2ae"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_B2C4"
+addr = "b2c4"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_B2FD"
+addr = "b2fd"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_B373"
+addr = "b373"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B3A6"
+addr = "b3a6"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B3BA"
+addr = "b3ba"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_B3C3"
+addr = "b3c3"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_B3FC"
+addr = "b3fc"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B4AD"
+addr = "b4ad"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B4E3"
+addr = "b4e3"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B50A"
+addr = "b50a"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B57B"
+addr = "b57b"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B5F0"
+addr = "b5f0"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_B62B"
+addr = "b62b"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_B680"
+addr = "b680"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_B6CB"
+addr = "b6cb"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B6E3"
+addr = "b6e3"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B7DE"
+addr = "b7de"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B816"
+addr = "b816"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B838"
+addr = "b838"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B84E"
+addr = "b84e"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B88F"
+addr = "b88f"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B8F5"
+addr = "b8f5"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_B98C"
+addr = "b98c"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_BAA2"
+addr = "baa2"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_BAFF"
+addr = "baff"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_BB12"
+addr = "bb12"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_BC59"
+addr = "bc59"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_BC8E"
+addr = "bc8e"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_BCA7"
+addr = "bca7"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_BCB9"
+addr = "bcb9"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_BD2C"
+addr = "bd2c"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_BD50"
+addr = "bd50"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_BD55"
+addr = "bd55"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_BD5E"
+addr = "bd5e"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_BD64"
+addr = "bd64"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_BDC3"
+addr = "bdc3"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_BDEC"
+addr = "bdec"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_BE60"
+addr = "be60"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_BE75"
+addr = "be75"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_BEC9"
+addr = "bec9"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_BF0D"
+addr = "bf0d"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_BF2C"
+addr = "bf2c"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_BF6E"
+addr = "bf6e"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_BF76"
+addr = "bf76"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_BF95"
+addr = "bf95"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_BFC6"
+addr = "bfc6"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_C01F"
+addr = "c01f"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_C062"
+addr = "c062"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_C084"
+addr = "c084"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_C0AD"
+addr = "c0ad"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_C0B4"
+addr = "c0b4"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_C0BA"
+addr = "c0ba"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_C113"
+addr = "c113"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_C142"
+addr = "c142"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_C153"
+addr = "c153"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_C15C"
+addr = "c15c"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_C18B"
+addr = "c18b"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_C1F9"
+addr = "c1f9"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_C296"
+addr = "c296"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_C2D7"
+addr = "c2d7"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_C33A"
+addr = "c33a"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_C33B"
+addr = "c33b"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_C366"
+addr = "c366"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_C3B0"
+addr = "c3b0"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_C3D3"
+addr = "c3d3"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_C43C"
+addr = "c43c"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_C4C7"
+addr = "c4c7"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_C4DA"
+addr = "c4da"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_C562"
+addr = "c562"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_C5CA"
+addr = "c5ca"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_C5FC"
+addr = "c5fc"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_C60B"
+addr = "c60b"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_C69E"
+addr = "c69e"
+bank = 3
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_03_C6D3"
+addr = "c6d3"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_C726"
+addr = "c726"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_CCA8"
+addr = "cca8"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_CD12"
+addr = "cd12"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_CD37"
+addr = "cd37"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_CDE2"
+addr = "cde2"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_CDE5"
+addr = "cde5"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_CF08"
+addr = "cf08"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_CF7C"
+addr = "cf7c"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_DC03"
+addr = "dc03"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_DC5E"
+addr = "dc5e"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_DE42"
+addr = "de42"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_DE55"
+addr = "de55"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_DF6C"
+addr = "df6c"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_E04F"
+addr = "e04f"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_E07E"
+addr = "e07e"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_E0C4"
+addr = "e0c4"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_E143"
+addr = "e143"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_E1BE"
+addr = "e1be"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_E2ED"
+addr = "e2ed"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_E2F7"
+addr = "e2f7"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_E309"
+addr = "e309"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_E3A0"
+addr = "e3a0"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_E5FA"
+addr = "e5fa"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_E601"
+addr = "e601"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_E619"
+addr = "e619"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_E61A"
+addr = "e61a"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_E625"
+addr = "e625"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_E6B5"
+addr = "e6b5"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_E6FB"
+addr = "e6fb"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_E706"
+addr = "e706"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_E70D"
+addr = "e70d"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_E71D"
+addr = "e71d"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_E72E"
+addr = "e72e"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_E7D6"
+addr = "e7d6"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_E83C"
+addr = "e83c"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_E8CA"
+addr = "e8ca"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_E8D8"
+addr = "e8d8"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_E92C"
+addr = "e92c"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_E933"
+addr = "e933"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_E9BF"
+addr = "e9bf"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_E9CC"
+addr = "e9cc"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_EA0D"
+addr = "ea0d"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_EA2D"
+addr = "ea2d"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_EAB7"
+addr = "eab7"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_EAB9"
+addr = "eab9"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_EADE"
+addr = "eade"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_EB1A"
+addr = "eb1a"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_EB37"
+addr = "eb37"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_EB7A"
+addr = "eb7a"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_EB7B"
+addr = "eb7b"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_EB7F"
+addr = "eb7f"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_EB83"
+addr = "eb83"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_EC42"
+addr = "ec42"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_ED03"
+addr = "ed03"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_ED82"
+addr = "ed82"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_EEEF"
+addr = "eeef"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_EF0C"
+addr = "ef0c"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_EF1E"
+addr = "ef1e"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_EF3C"
+addr = "ef3c"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_EF68"
+addr = "ef68"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_EF94"
+addr = "ef94"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F003"
+addr = "f003"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F04A"
+addr = "f04a"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F05E"
+addr = "f05e"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F074"
+addr = "f074"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F08A"
+addr = "f08a"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F0C2"
+addr = "f0c2"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F0DD"
+addr = "f0dd"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F105"
+addr = "f105"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F12D"
+addr = "f12d"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F188"
+addr = "f188"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F1D2"
+addr = "f1d2"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F275"
+addr = "f275"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F295"
+addr = "f295"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F2AF"
+addr = "f2af"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F2F6"
+addr = "f2f6"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F2F7"
+addr = "f2f7"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_F2FF"
+addr = "f2ff"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_F30E"
+addr = "f30e"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_F358"
+addr = "f358"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F710"
+addr = "f710"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F72F"
+addr = "f72f"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F7AF"
+addr = "f7af"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F7DC"
+addr = "f7dc"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F804"
+addr = "f804"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F834"
+addr = "f834"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_F861"
+addr = "f861"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_F885"
+addr = "f885"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_F922"
+addr = "f922"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_F98F"
+addr = "f98f"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FB58"
+addr = "fb58"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_FB7E"
+addr = "fb7e"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FBA1"
+addr = "fba1"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_FBA2"
+addr = "fba2"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FC13"
+addr = "fc13"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_FC41"
+addr = "fc41"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FC60"
+addr = "fc60"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_FC99"
+addr = "fc99"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_FCB6"
+addr = "fcb6"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FD12"
+addr = "fd12"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_FD13"
+addr = "fd13"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FD2A"
+addr = "fd2a"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_FD30"
+addr = "fd30"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FD39"
+addr = "fd39"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FD40"
+addr = "fd40"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FD4C"
+addr = "fd4c"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FD58"
+addr = "fd58"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FD9C"
+addr = "fd9c"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FDB7"
+addr = "fdb7"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_FDC4"
+addr = "fdc4"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FDCB"
+addr = "fdcb"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FDD1"
+addr = "fdd1"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FDFF"
+addr = "fdff"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FE1E"
+addr = "fe1e"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_FE62"
+addr = "fe62"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_FE97"
+addr = "fe97"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FEAC"
+addr = "feac"
+bank = 3
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_03_FEE5"
+addr = "fee5"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_03_FF3B"
+addr = "ff3b"
+bank = 3
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_8000"
+addr = "8000"
+bank = 4
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_80AE"
+addr = "80ae"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_80EF"
+addr = "80ef"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_8163"
+addr = "8163"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_8209"
+addr = "8209"
+bank = 4
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_825E"
+addr = "825e"
+bank = 4
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_8895"
+addr = "8895"
+bank = 4
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_88BC"
+addr = "88bc"
+bank = 4
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_88BF"
+addr = "88bf"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_8B49"
+addr = "8b49"
+bank = 4
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_8B4E"
+addr = "8b4e"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_8B72"
+addr = "8b72"
+bank = 4
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_8B87"
+addr = "8b87"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_8C77"
+addr = "8c77"
+bank = 4
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_8C85"
+addr = "8c85"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_8D71"
+addr = "8d71"
+bank = 4
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_92E7"
+addr = "92e7"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_93B4"
+addr = "93b4"
+bank = 4
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_9483"
+addr = "9483"
+bank = 4
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_94EA"
+addr = "94ea"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_956B"
+addr = "956b"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_95E2"
+addr = "95e2"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_960A"
+addr = "960a"
+bank = 4
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_96CF"
+addr = "96cf"
+bank = 4
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_973C"
+addr = "973c"
+bank = 4
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_9A7D"
+addr = "9a7d"
+bank = 4
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_9A88"
+addr = "9a88"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_9AB7"
+addr = "9ab7"
+bank = 4
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_9AF9"
+addr = "9af9"
+bank = 4
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_9B35"
+addr = "9b35"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_9B96"
+addr = "9b96"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_9BBC"
+addr = "9bbc"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_C00B"
+addr = "c00b"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_C01F"
+addr = "c01f"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_C034"
+addr = "c034"
+bank = 4
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_C041"
+addr = "c041"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_C10B"
+addr = "c10b"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_D800"
+addr = "d800"
+bank = 4
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_04_ED2E"
+addr = "ed2e"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_04_FDC4"
+addr = "fdc4"
+bank = 4
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_05_8000"
+addr = "8000"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_87EA"
+addr = "87ea"
+bank = 5
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_05_87F4"
+addr = "87f4"
+bank = 5
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_05_8800"
+addr = "8800"
+bank = 5
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_05_880C"
+addr = "880c"
+bank = 5
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_05_882C"
+addr = "882c"
+bank = 5
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_8838"
+addr = "8838"
+bank = 5
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_05_883A"
+addr = "883a"
+bank = 5
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_05_8843"
+addr = "8843"
+bank = 5
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_05_8845"
+addr = "8845"
+bank = 5
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_05_8874"
+addr = "8874"
+bank = 5
+emit = true
+entry_x = 0
+note = "call target"
+
+[[func]]
+name = "fn_05_8949"
+addr = "8949"
+bank = 5
+emit = true
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_8F19"
+addr = "8f19"
+bank = 5
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_8FFA"
+addr = "8ffa"
+bank = 5
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_05_90B6"
+addr = "90b6"
+bank = 5
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_05_90BA"
+addr = "90ba"
+bank = 5
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_05_910D"
+addr = "910d"
+bank = 5
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_05_9166"
+addr = "9166"
+bank = 5
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_C800"
+addr = "c800"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_C860"
+addr = "c860"
+bank = 5
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_05_C8F3"
+addr = "c8f3"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_C8FB"
+addr = "c8fb"
+bank = 5
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_05_C95B"
+addr = "c95b"
+bank = 5
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_05_C994"
+addr = "c994"
+bank = 5
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_05_D300"
+addr = "d300"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_D330"
+addr = "d330"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_D472"
+addr = "d472"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_D4EE"
+addr = "d4ee"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_D7A1"
+addr = "d7a1"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_D7C2"
+addr = "d7c2"
+bank = 5
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_05_D7D1"
+addr = "d7d1"
+bank = 5
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_05_D815"
+addr = "d815"
+bank = 5
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_05_DB49"
+addr = "db49"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_DC6F"
+addr = "dc6f"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_DC7E"
+addr = "dc7e"
+bank = 5
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_05_DCA0"
+addr = "dca0"
+bank = 5
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_05_DD7A"
+addr = "dd7a"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_E3BF"
+addr = "e3bf"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_E634"
+addr = "e634"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_E6B1"
+addr = "e6b1"
+bank = 5
+emit = true
+entry_m = 0
+entry_x = 0
+note = "call target"
+
+[[func]]
+name = "fn_05_E727"
+addr = "e727"
+bank = 5
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_05_E82A"
+addr = "e82a"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_E84C"
+addr = "e84c"
+bank = 5
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_05_E879"
+addr = "e879"
+bank = 5
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_05_E95A"
+addr = "e95a"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_E9AE"
+addr = "e9ae"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_05_EE3A"
+addr = "ee3a"
+bank = 5
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_8000"
+addr = "8000"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_8003"
+addr = "8003"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_80B8"
+addr = "80b8"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_810A"
+addr = "810a"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_81C5"
+addr = "81c5"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_8350"
+addr = "8350"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_83D8"
+addr = "83d8"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_83EC"
+addr = "83ec"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_841C"
+addr = "841c"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_8495"
+addr = "8495"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_84B6"
+addr = "84b6"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_84D1"
+addr = "84d1"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_84DD"
+addr = "84dd"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_8558"
+addr = "8558"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_85CF"
+addr = "85cf"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_85FE"
+addr = "85fe"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_8657"
+addr = "8657"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_8898"
+addr = "8898"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_88D5"
+addr = "88d5"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_89BD"
+addr = "89bd"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_89E5"
+addr = "89e5"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_89EE"
+addr = "89ee"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_8A0D"
+addr = "8a0d"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_8A23"
+addr = "8a23"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_8A28"
+addr = "8a28"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_8A32"
+addr = "8a32"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_8A56"
+addr = "8a56"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_8ABF"
+addr = "8abf"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_8ADA"
+addr = "8ada"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_8AE0"
+addr = "8ae0"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_8B6F"
+addr = "8b6f"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_8B9D"
+addr = "8b9d"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_8BB3"
+addr = "8bb3"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_8BCB"
+addr = "8bcb"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_8DBF"
+addr = "8dbf"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_8DEA"
+addr = "8dea"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_8ED6"
+addr = "8ed6"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_8EE7"
+addr = "8ee7"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_8EF0"
+addr = "8ef0"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_8F34"
+addr = "8f34"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_8FA9"
+addr = "8fa9"
+bank = 13
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_9024"
+addr = "9024"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_9025"
+addr = "9025"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_96A8"
+addr = "96a8"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_96DD"
+addr = "96dd"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_9751"
+addr = "9751"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_9755"
+addr = "9755"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_977C"
+addr = "977c"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_983D"
+addr = "983d"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_9848"
+addr = "9848"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_98AA"
+addr = "98aa"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_98F2"
+addr = "98f2"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_99A5"
+addr = "99a5"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_99CA"
+addr = "99ca"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_9A4C"
+addr = "9a4c"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_9D11"
+addr = "9d11"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_9D90"
+addr = "9d90"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_9E1D"
+addr = "9e1d"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_9E3F"
+addr = "9e3f"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_9E5A"
+addr = "9e5a"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_9ED1"
+addr = "9ed1"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_9F7E"
+addr = "9f7e"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_9FC6"
+addr = "9fc6"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_9FD4"
+addr = "9fd4"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_9FEC"
+addr = "9fec"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_A026"
+addr = "a026"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_A04D"
+addr = "a04d"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_A04E"
+addr = "a04e"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_A054"
+addr = "a054"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_A0BF"
+addr = "a0bf"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_A0D4"
+addr = "a0d4"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_A165"
+addr = "a165"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_A1FD"
+addr = "a1fd"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_A219"
+addr = "a219"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_A243"
+addr = "a243"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_A263"
+addr = "a263"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_A280"
+addr = "a280"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_A29C"
+addr = "a29c"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_A316"
+addr = "a316"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_A37E"
+addr = "a37e"
+bank = 13
+emit = true
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_A3BF"
+addr = "a3bf"
+bank = 13
+emit = true
+entry_x = 0
+note = "call target"
+
+[[func]]
+name = "fn_0D_A3DD"
+addr = "a3dd"
+bank = 13
+emit = true
+entry_x = 0
+note = "call target"
+
+[[func]]
+name = "fn_0D_A457"
+addr = "a457"
+bank = 13
+emit = true
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_A4C7"
+addr = "a4c7"
+bank = 13
+emit = true
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_A835"
+addr = "a835"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_A8F6"
+addr = "a8f6"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_A91C"
+addr = "a91c"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_A9B5"
+addr = "a9b5"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_A9D5"
+addr = "a9d5"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_AA15"
+addr = "aa15"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_AA3D"
+addr = "aa3d"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_AA4C"
+addr = "aa4c"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_AA4F"
+addr = "aa4f"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_AA5B"
+addr = "aa5b"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_AA8F"
+addr = "aa8f"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_AAB4"
+addr = "aab4"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_AB70"
+addr = "ab70"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_AB80"
+addr = "ab80"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_AB99"
+addr = "ab99"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_AC26"
+addr = "ac26"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_AC76"
+addr = "ac76"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_AD34"
+addr = "ad34"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_AD3E"
+addr = "ad3e"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_AD50"
+addr = "ad50"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_AD71"
+addr = "ad71"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_ADFB"
+addr = "adfb"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_AE1C"
+addr = "ae1c"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_AE38"
+addr = "ae38"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_AE5F"
+addr = "ae5f"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_AF0C"
+addr = "af0c"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_AFF8"
+addr = "aff8"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B018"
+addr = "b018"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B050"
+addr = "b050"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_B0E5"
+addr = "b0e5"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B118"
+addr = "b118"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B125"
+addr = "b125"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_B13E"
+addr = "b13e"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_B177"
+addr = "b177"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B236"
+addr = "b236"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B26C"
+addr = "b26c"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B322"
+addr = "b322"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B39D"
+addr = "b39d"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_B3D8"
+addr = "b3d8"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_B42F"
+addr = "b42f"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_B47A"
+addr = "b47a"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B492"
+addr = "b492"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B58D"
+addr = "b58d"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B5C5"
+addr = "b5c5"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B5E7"
+addr = "b5e7"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B5FA"
+addr = "b5fa"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B63B"
+addr = "b63b"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B6A1"
+addr = "b6a1"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B875"
+addr = "b875"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B8D2"
+addr = "b8d2"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_B8E5"
+addr = "b8e5"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_BA8C"
+addr = "ba8c"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_BAF5"
+addr = "baf5"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_BB2D"
+addr = "bb2d"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_BB30"
+addr = "bb30"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_BE0F"
+addr = "be0f"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_BE76"
+addr = "be76"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_BE77"
+addr = "be77"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_BE9C"
+addr = "be9c"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_BEA0"
+addr = "bea0"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_BEA7"
+addr = "bea7"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_BEAD"
+addr = "bead"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_BF33"
+addr = "bf33"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_BF4F"
+addr = "bf4f"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_BF7E"
+addr = "bf7e"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_BFEC"
+addr = "bfec"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_C089"
+addr = "c089"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_C0C0"
+addr = "c0c0"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_C123"
+addr = "c123"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_C124"
+addr = "c124"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_C14F"
+addr = "c14f"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_C250"
+addr = "c250"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_C2E9"
+addr = "c2e9"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_C354"
+addr = "c354"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_C367"
+addr = "c367"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_C3EF"
+addr = "c3ef"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_C461"
+addr = "c461"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_C4B9"
+addr = "c4b9"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_C587"
+addr = "c587"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_C597"
+addr = "c597"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_C5E1"
+addr = "c5e1"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_CAFE"
+addr = "cafe"
+bank = 13
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0D_CBB0"
+addr = "cbb0"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_CC1A"
+addr = "cc1a"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_CC3F"
+addr = "cc3f"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_CE10"
+addr = "ce10"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_CE4D"
+addr = "ce4d"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_CE92"
+addr = "ce92"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_DAFC"
+addr = "dafc"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_DB62"
+addr = "db62"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_DD76"
+addr = "dd76"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_DD7D"
+addr = "dd7d"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_DFC2"
+addr = "dfc2"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_E003"
+addr = "e003"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_E078"
+addr = "e078"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_E247"
+addr = "e247"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_E251"
+addr = "e251"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_E263"
+addr = "e263"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_E2FA"
+addr = "e2fa"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_E391"
+addr = "e391"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_E55A"
+addr = "e55a"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_E571"
+addr = "e571"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_E58C"
+addr = "e58c"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_E58D"
+addr = "e58d"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_E598"
+addr = "e598"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_E613"
+addr = "e613"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_E665"
+addr = "e665"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_E66C"
+addr = "e66c"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_E67C"
+addr = "e67c"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_E68D"
+addr = "e68d"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_E743"
+addr = "e743"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_E7D9"
+addr = "e7d9"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_E828"
+addr = "e828"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_E836"
+addr = "e836"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_E844"
+addr = "e844"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_E898"
+addr = "e898"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_E89F"
+addr = "e89f"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_E948"
+addr = "e948"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_E989"
+addr = "e989"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_E9A9"
+addr = "e9a9"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_EA30"
+addr = "ea30"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_EA33"
+addr = "ea33"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_EA35"
+addr = "ea35"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_EA5A"
+addr = "ea5a"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_EA96"
+addr = "ea96"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_EAB3"
+addr = "eab3"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_EAF6"
+addr = "eaf6"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_EAF7"
+addr = "eaf7"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_EAFB"
+addr = "eafb"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_EAFF"
+addr = "eaff"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_EB8A"
+addr = "eb8a"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_EE40"
+addr = "ee40"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_EE5D"
+addr = "ee5d"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_EE6F"
+addr = "ee6f"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_EE91"
+addr = "ee91"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_EEDC"
+addr = "eedc"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_EF08"
+addr = "ef08"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_EF7D"
+addr = "ef7d"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_EF98"
+addr = "ef98"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_EFDF"
+addr = "efdf"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_EFF3"
+addr = "eff3"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F009"
+addr = "f009"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F01F"
+addr = "f01f"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F043"
+addr = "f043"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F057"
+addr = "f057"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F072"
+addr = "f072"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F09E"
+addr = "f09e"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F0CD"
+addr = "f0cd"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F128"
+addr = "f128"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F176"
+addr = "f176"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F1E2"
+addr = "f1e2"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F21D"
+addr = "f21d"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F247"
+addr = "f247"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F26B"
+addr = "f26b"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F29F"
+addr = "f29f"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F2E6"
+addr = "f2e6"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F2E7"
+addr = "f2e7"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_F2FE"
+addr = "f2fe"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_F700"
+addr = "f700"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F726"
+addr = "f726"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F7AD"
+addr = "f7ad"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F7DA"
+addr = "f7da"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F802"
+addr = "f802"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F832"
+addr = "f832"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_F85F"
+addr = "f85f"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_F883"
+addr = "f883"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_F920"
+addr = "f920"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_F999"
+addr = "f999"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_FB6E"
+addr = "fb6e"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_FB94"
+addr = "fb94"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_FBB7"
+addr = "fbb7"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_FBB8"
+addr = "fbb8"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_FC29"
+addr = "fc29"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_FC57"
+addr = "fc57"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_FC96"
+addr = "fc96"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_FCAF"
+addr = "fcaf"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_FCCC"
+addr = "fccc"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_FD28"
+addr = "fd28"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_FD29"
+addr = "fd29"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_FD40"
+addr = "fd40"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_FD4F"
+addr = "fd4f"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_FD62"
+addr = "fd62"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_FD6E"
+addr = "fd6e"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_FDB2"
+addr = "fdb2"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_FDE1"
+addr = "fde1"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_FE15"
+addr = "fe15"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_FE34"
+addr = "fe34"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_FE78"
+addr = "fe78"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_FEAD"
+addr = "fead"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_FEC2"
+addr = "fec2"
+bank = 13
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0D_FEFB"
+addr = "fefb"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_FF51"
+addr = "ff51"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0D_FF78"
+addr = "ff78"
+bank = 13
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_8000"
+addr = "8000"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_834E"
+addr = "834e"
+bank = 14
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_85D8"
+addr = "85d8"
+bank = 14
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_85DD"
+addr = "85dd"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_8601"
+addr = "8601"
+bank = 14
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_8616"
+addr = "8616"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_8706"
+addr = "8706"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_8714"
+addr = "8714"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_87FF"
+addr = "87ff"
+bank = 14
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_884F"
+addr = "884f"
+bank = 14
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_88A2"
+addr = "88a2"
+bank = 14
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_88C0"
+addr = "88c0"
+bank = 14
+emit = true
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_8A4A"
+addr = "8a4a"
+bank = 14
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_8D11"
+addr = "8d11"
+bank = 14
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_8D2E"
+addr = "8d2e"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_8D51"
+addr = "8d51"
+bank = 14
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_8F35"
+addr = "8f35"
+bank = 14
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_8F43"
+addr = "8f43"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_905C"
+addr = "905c"
+bank = 14
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_90CB"
+addr = "90cb"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_9147"
+addr = "9147"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_91C1"
+addr = "91c1"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_91F8"
+addr = "91f8"
+bank = 14
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_92BA"
+addr = "92ba"
+bank = 14
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_930F"
+addr = "930f"
+bank = 14
+emit = true
+entry_m = 0
+entry_x = 0
+note = "call target"
+
+[[func]]
+name = "fn_0E_9327"
+addr = "9327"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_98B8"
+addr = "98b8"
+bank = 14
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_98C3"
+addr = "98c3"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_98F2"
+addr = "98f2"
+bank = 14
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_9934"
+addr = "9934"
+bank = 14
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_9970"
+addr = "9970"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_99BA"
+addr = "99ba"
+bank = 14
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_99E0"
+addr = "99e0"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_9A06"
+addr = "9a06"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_C34C"
+addr = "c34c"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_C374"
+addr = "c374"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_C396"
+addr = "c396"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_C3BD"
+addr = "c3bd"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0E_C3E0"
+addr = "c3e0"
+bank = 14
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0E_C47E"
+addr = "c47e"
+bank = 14
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0F_8000"
+addr = "8000"
+bank = 15
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0F_801F"
+addr = "801f"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_885F"
+addr = "885f"
+bank = 15
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_8869"
+addr = "8869"
+bank = 15
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_0F_8875"
+addr = "8875"
+bank = 15
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_0F_8881"
+addr = "8881"
+bank = 15
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_0F_88A1"
+addr = "88a1"
+bank = 15
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_88AD"
+addr = "88ad"
+bank = 15
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_0F_88AF"
+addr = "88af"
+bank = 15
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_0F_88B8"
+addr = "88b8"
+bank = 15
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_0F_88BA"
+addr = "88ba"
+bank = 15
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_0F_88E9"
+addr = "88e9"
+bank = 15
+emit = true
+entry_x = 0
+note = "call target"
+
+[[func]]
+name = "fn_0F_89BE"
+addr = "89be"
+bank = 15
+emit = true
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_8FB5"
+addr = "8fb5"
+bank = 15
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_9096"
+addr = "9096"
+bank = 15
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_0F_9152"
+addr = "9152"
+bank = 15
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_0F_9156"
+addr = "9156"
+bank = 15
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_0F_91BA"
+addr = "91ba"
+bank = 15
+emit = true
+entry_m = 0
+entry_x = 0
+note = "jump landing"
+
+[[func]]
+name = "fn_0F_91CF"
+addr = "91cf"
+bank = 15
+emit = true
+entry_m = 0
+entry_x = 0
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_D000"
+addr = "d000"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_D04F"
+addr = "d04f"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_D051"
+addr = "d051"
+bank = 15
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0F_D085"
+addr = "d085"
+bank = 15
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0F_D8F6"
+addr = "d8f6"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_D94F"
+addr = "d94f"
+bank = 15
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0F_D9B9"
+addr = "d9b9"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_E0FB"
+addr = "e0fb"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_E12B"
+addr = "e12b"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_E26D"
+addr = "e26d"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_E2E9"
+addr = "e2e9"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_E893"
+addr = "e893"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_EBC6"
+addr = "ebc6"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_ED35"
+addr = "ed35"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_EDB7"
+addr = "edb7"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_EFAF"
+addr = "efaf"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_F027"
+addr = "f027"
+bank = 15
+emit = true
+entry_m = 0
+entry_x = 0
+note = "call target"
+
+[[func]]
+name = "fn_0F_F0AC"
+addr = "f0ac"
+bank = 15
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0F_F0E0"
+addr = "f0e0"
+bank = 15
+emit = true
+note = "jump landing"
+
+[[func]]
+name = "fn_0F_F1AF"
+addr = "f1af"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_F1D1"
+addr = "f1d1"
+bank = 15
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0F_F317"
+addr = "f317"
+bank = 15
+emit = true
+note = "call target"
+
+[[func]]
+name = "fn_0F_F733"
+addr = "f733"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_F96C"
+addr = "f96c"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_FA4D"
+addr = "fa4d"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_FA9F"
+addr = "fa9f"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+[[func]]
+name = "fn_0F_FB49"
+addr = "fb49"
+bank = 15
+emit = true
+note = "interpreted region start"
+
+# <<< END coverage-promoted
