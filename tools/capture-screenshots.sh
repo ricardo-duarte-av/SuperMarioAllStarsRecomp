@@ -20,24 +20,23 @@ rm -rf "$TMP"; mkdir -p "$OUT" "$TMP"
 
 # --- gameplay: the pictures the test routes save at known moments ------------------
 export BIN
-tests/run_route.sh tests/route_fight_gabby.txt native "$TMP/gabby" >/dev/null
-tests/run_route.sh tests/route_win_next.txt native "$TMP/winnext" >/dev/null
-pick() {  # pick <out name> <route dir> <picture>
+for r in attract smb1 ll smb2 smb3; do tests/run_route.sh tests/route_$r.txt native "$TMP/$r" >/dev/null & done; wait
+pick() {  # pick <out name> <route> <picture>
     python3 -I tools/png_scale.py "$TMP/$2/shots/$3.png" "$OUT/$1.png" 3
 }
-pick gameplay-1 gabby   fight_start
-pick gameplay-2 gabby   play01
-pick gameplay-3 winnext ko03
-pick gameplay-4 winnext next_a
-pick gameplay-5 winnext f200
-pick gameplay-6 gabby   play02
-pick gameplay-7 winnext after_ko
+pick gameplay-1 attract a03       # the title screen
+pick gameplay-2 smb1    select    # Select Game
+pick gameplay-3 smb1    p02       # Super Mario Bros., World 1-1
+pick gameplay-4 ll      p02       # The Lost Levels, World 1-1
+pick gameplay-5 smb2    p01       # Super Mario Bros. 2
+pick gameplay-6 smb3    start     # Super Mario Bros. 3, World 1-1
+pick gameplay-7 smb3    p02       # the Super Mario Bros. 3 world map
 
 # --- demo settings: a few cheats ticked, so the Game page shows them on -------------
 HOME_DIR="$TMP/home"
 SETTINGS="$HOME_DIR/Library/Application Support/SuperMarioAllStarsRecomp"
 mkdir -p "$SETTINGS"
-printf 'mute_mask=0\nmeter=1\nhit=1\nrest=0\nstart=0\n' > "$SETTINGS/smas.ini"
+printf 'mute_mask=0\nlives=1\ntime=1\nhealth=0\npower=1\n' > "$SETTINGS/smas.ini"
 
 # --- launcher pages (a window shows for about ten seconds) -------------------------
 echo "A launcher window will show on screen for about 10 seconds; please don't click it."

@@ -7,6 +7,7 @@ press right 4
 wait 90
 press right 4
 wait 90
+dump select
 press start 4
 wait 200
 press start 4

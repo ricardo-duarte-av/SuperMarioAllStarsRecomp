@@ -21,7 +21,7 @@ def to_game_title(game):
     """Power-on -> title -> Select Game -> that game -> File A (new) -> the game's own title."""
     return (wait(400) + press("start") + wait(400)
             + (press("right") + wait(90)) * GAMES[game]
-            + press("start") + wait(200) + press("start") + wait(500))
+            + dump("select") + press("start") + wait(200) + press("start") + wait(500))
 
 def title_to_play(game):
     """The game's own title screen -> the first level, standing at the start."""

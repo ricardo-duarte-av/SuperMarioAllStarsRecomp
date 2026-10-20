@@ -3,6 +3,7 @@
 wait 400
 press start 4
 wait 400
+dump select
 press start 4
 wait 200
 press start 4
