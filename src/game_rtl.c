@@ -46,9 +46,11 @@ void GameRunOneFrame(void)
     g_dma_hdma_midframe_inert = 2;
     static int excluded;
     if (!excluded) {
-        /* Dev switch for bisecting picture differences against Snes9x (tests/ref/README.md):
-         * SMAS_EXCLUDE="00F440,00FFA3" runs those routines in the interpreter. */
-        const char *only = getenv("SMAS_EXCLUDE");
+        /* Super Mario Bros. 3's per-frame handler (the cart's shared NMI at $00:836C hands it on through
+         * $00:83B1 -> $20:8006) left to the original code: as translated code it cannot be paused for the
+         * raster interrupt, and the level's far background comes out wrong (tests/ref/README.md). */
+        static const uint32 kInterpTargets[] = { 0x0083B1, 0x8083B1, 0x208006, 0xA08006 };
+        const char *only = getenv("SMAS_EXCLUDE");   /* dev switch: "0083B1,208006" replaces the list */
         if (only && *only) {
             uint32 list[64]; size_t n = 0;
             for (const char *q = only; *q && n < 64; ) {
@@ -56,7 +58,8 @@ void GameRunOneFrame(void)
                 while (*q == ',') ++q;
             }
             interp_bridge_set_lle_bounce_exclusions(list, n);
-        }
+        } else
+            interp_bridge_set_lle_bounce_exclusions(kInterpTargets, sizeof kInterpTargets / sizeof kInterpTargets[0]);
         excluded = 1;
     }
     snes_beam_frame_driver_run_frame();

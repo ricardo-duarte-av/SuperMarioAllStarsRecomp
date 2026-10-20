@@ -53,10 +53,17 @@ static int16_t input_cb(unsigned port, unsigned dev, unsigned idx, unsigned id) 
     if (port != 0 || dev != 1) return 0;
     return (pad_mask >> id) & 1;
 }
-static int button(const char *n) {
+static unsigned buttons(const char *spec) {   /* "right+y+b" -> pad bits */
     static const char *names[] = {"b","y","select","start","up","down","left","right","a","x","l","r"};
-    for (int i = 0; i < 12; i++) if (!strcmp(n, names[i])) return i;
-    fprintf(stderr, "unknown button %s\n", n); exit(2);
+    char tmp[64]; snprintf(tmp, sizeof tmp, "%s", spec);
+    unsigned mask = 0;
+    for (char *n = strtok(tmp, "+"); n; n = strtok(NULL, "+")) {
+        int i = 0;
+        while (i < 12 && strcmp(n, names[i])) i++;
+        if (i == 12) { fprintf(stderr, "unknown button %s\n", n); exit(2); }
+        mask |= 1u << i;
+    }
+    return mask;
 }
 int main(int argc, char **argv) {
     if (argc < 5) { fprintf(stderr, "usage\n"); return 2; }
@@ -88,7 +95,11 @@ int main(int argc, char **argv) {
         int k = sscanf(line, "%63s %63s %d", a, b, &cnt);
         if (k < 1 || a[0] == '#') continue;
         if (!strcmp(a, "wait")) { int c = atoi(b); for (int i = 0; i < c; i++) { pad_mask = 0; run(); frames++; } }
-        else if (!strcmp(a, "press")) { int bit = button(b); for (int i = 0; i < cnt; i++) { pad_mask = 1u << bit; run(); frames++; } pad_mask = 0; }
+        else if (!strcmp(a, "press")) {   /* like our host: hold N frames (default 1), then one idle frame */
+            unsigned m = buttons(b); if (cnt < 1) cnt = 1;
+            for (int i = 0; i < cnt; i++) { pad_mask = m; run(); frames++; }
+            pad_mask = 0; run(); frames++;
+        }
         else if (!strcmp(a, "dump")) {
             char p[512]; snprintf(p, sizeof p, "%s/%s.ppm", argv[3], b);
             FILE *o = fopen(p, "wb"); fprintf(o, "P6\n%u %u\n255\n", W, H); fwrite(frame, 3, (size_t)W * H, o); fclose(o);

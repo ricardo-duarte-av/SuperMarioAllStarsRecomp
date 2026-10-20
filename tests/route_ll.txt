@@ -1,0 +1,69 @@
+# Select Game -> ll -> File A -> first level, then run right and jump for ~2000 frames.
+#@ frames=4000
+wait 400
+press start 4
+wait 400
+press right 4
+wait 90
+press start 4
+wait 200
+press start 4
+wait 500
+dump title
+press start 4
+wait 400
+dump start
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+dump p01
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+dump p02
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+dump p03
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+dump p04
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+dump p05
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+press right+y 50
+press right+y+b 30
+dump p06

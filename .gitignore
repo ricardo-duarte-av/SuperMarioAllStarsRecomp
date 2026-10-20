@@ -22,3 +22,4 @@ recomp/funcs.h
 *.sfc
 *.smc
 *.srm
+__pycache__/

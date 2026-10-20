@@ -1,0 +1,26 @@
+Subject: HDMA and the vblank writes start each frame the way the console does
+
+Two fixes in the frame renderer, found against Snes9x on Super Mario All-Stars (sky gradients):
+- Writes the game made during vblank are applied before HDMA's V=0 init, not after its first
+  transfer, so they no longer overwrite line 0.
+- Line 0 is not shown but its H-blank still steps HDMA, so every HDMA band edge was one line late.
+diff --git a/runner/src/beam_frame_driver.c b/runner/src/beam_frame_driver.c
+index 66ea098..38b0c91 100644
+--- a/runner/src/beam_frame_driver.c
++++ b/runner/src/beam_frame_driver.c
+@@ -254,10 +254,15 @@ void snes_beam_frame_driver_draw_ppu_frame_observed(
+    * the beam must not also step it from inside guest register writes. */
+   snes_set_hdma_beam_enabled(g_snes, false);
+   ppu_rasterRenderBegin(g_ppu);
++  /* Writes made during vblank (V=225..261) precede V=0's HDMA init on hardware;
++   * applied later, they would overwrite HDMA's first-line values on line 0. */
++  ppu_rasterApplyLine(g_ppu, 261);
+   dma_initHdma(g_snes->dma);
+   /* Hardware's V=0 init also performs each channel's first transfer before
+    * any visible pixel. */
+   dma_primeHdmaFirstLine(g_snes->dma);
++  /* Line 0 is never shown, but its H-blank still steps HDMA (Snes9x agrees). */
++  dma_doHdma(g_snes->dma);
+   for (line = 1; line <= 224; line++) {
+     uint8_t hdmaen;
+     /* A split is written in H-blank after its line is drawn, so the previous
