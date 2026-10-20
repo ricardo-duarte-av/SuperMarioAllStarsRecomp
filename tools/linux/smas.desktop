@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Super Mario All-Stars
+Comment=Super Mario All-Stars rebuilt as a native program (bring your own ROM)
+Exec=SuperMarioAllStars
+Icon=smas
+Categories=Game;ArcadeGame;
+Terminal=false
