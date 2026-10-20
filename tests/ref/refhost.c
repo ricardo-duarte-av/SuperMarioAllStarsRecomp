@@ -100,6 +100,15 @@ int main(int argc, char **argv) {
             for (int i = 0; i < cnt; i++) { pad_mask = m; run(); frames++; }
             pad_mask = 0; run(); frames++;
         }
+        else if (!strcmp(a, "poke")) {    /* poke <wram addr hex> <bytes hex>, then one frame */
+            unsigned char *m = getmem(2); unsigned addr = (unsigned)strtoul(b, NULL, 16);
+            char hex[256] = ""; sscanf(line, "%*s %*s %255s", hex);
+            for (size_t i = 0; hex[2 * i] && hex[2 * i + 1] && addr + i < memsize(2); i++) {
+                char two[3] = { hex[2 * i], hex[2 * i + 1], 0 };
+                m[addr + i] = (unsigned char)strtoul(two, NULL, 16);
+            }
+            run(); frames++;
+        }
         else if (!strcmp(a, "dump")) {
             char p[512]; snprintf(p, sizeof p, "%s/%s.ppm", argv[3], b);
             FILE *o = fopen(p, "wb"); fprintf(o, "P6\n%u %u\n255\n", W, H); fwrite(frame, 3, (size_t)W * H, o); fclose(o);

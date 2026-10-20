@@ -7,8 +7,8 @@
 
 #include "recomp_runtime_ui.h"
 
-#define SMAS_MENU_ITEM_COUNT 19
-#define SMAS_LAUNCHER_ITEM_COUNT 13   /* the rows before the About section */
+#define SMAS_MENU_ITEM_COUNT 18
+#define SMAS_LAUNCHER_ITEM_COUNT 12   /* the rows before the About section */
 extern const RecompRuntimeUiItem kSmasMenuItems[SMAS_MENU_ITEM_COUNT];
 extern const RecompRuntimeUiCallbacks kSmasMenuCallbacks;
 extern const char kSmasAboutText[];

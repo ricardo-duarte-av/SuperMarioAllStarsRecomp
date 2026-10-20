@@ -23,11 +23,20 @@ TOML = os.path.join(ROOT, "recomp", "symbols.toml")
 BEGIN = "# >>> BEGIN coverage-promoted (written by tests/promote_from_coverage.py; do not hand-edit)"
 END = "# <<< END coverage-promoted"
 
+# --banks=01-0F limits promotion to those ROM banks. Super Mario Bros. and The Lost Levels live in
+# $01-$0F and translate cleanly; translated Super Mario Bros. 2/3 code ($10-$2F) and the shared cart code
+# ($00) break against Snes9x (notes/native-coverage.md), so they stay in the interpreter.
+BANKS = (0x00, 0x7F)
+for _a in sys.argv[1:]:
+    if _a.startswith("--banks="):
+        BANKS = tuple(int(x, 16) for x in _a.split("=", 1)[1].split("-"))
+
 def norm(pc24):
     """LoROM: banks $80-$FF mirror $00-$7F. Only ROM addresses ($8000+) are promotable."""
     bank, addr = pc24 >> 16, pc24 & 0xFFFF
     if bank >= 0x80: bank -= 0x80
     if addr < 0x8000 or bank >= 0x70: return None
+    if not BANKS[0] <= bank <= BANKS[1]: return None
     return bank, addr
 
 def main():

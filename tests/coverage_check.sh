@@ -7,7 +7,7 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
-ROUTES=("$@"); [ ${#ROUTES[@]} -gt 0 ] || ROUTES=(route_attract route_fight_gabby route_win_next route_lose)
+ROUTES=("$@"); [ ${#ROUTES[@]} -gt 0 ] || ROUTES=(route_attract route_smb1 route_ll route_smb2 route_smb3)
 mkdir -p build-game/cov
 for r in "${ROUTES[@]}"; do
   ( COVERAGE=1 tests/run_route.sh "tests/$r.txt" native "$ROOT/build-game/cov/$r" > "build-game/cov/$r.log" 2>&1

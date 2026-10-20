@@ -5,10 +5,10 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOFTWARE:-${BASH_SOURCE[0]}}")/.." && pwd)"
 cd "$ROOT"
-ROUTES=("$@"); [ ${#ROUTES[@]} -gt 0 ] || ROUTES=(route_attract route_fight_gabby route_win_next route_menus route_lose route_circuit_minor route_circuit_major route_circuit_world route_circuit_special)
+ROUTES=("$@"); [ ${#ROUTES[@]} -gt 0 ] || ROUTES=(route_attract route_smb1 route_ll route_smb2 route_smb3)
 INGEST=(); for r in "${ROUTES[@]}"; do INGEST+=("build-game/cov/$r.ingest.json"); done
-python3 tests/promote_from_coverage.py --regions "${INGEST[@]}"
-python3 tests/promote_from_coverage.py "${INGEST[@]}"
+python3 tests/promote_from_coverage.py --banks=01-0F --regions "${INGEST[@]}"
+python3 tests/promote_from_coverage.py --banks=01-0F "${INGEST[@]}"
 bash tools/regen.sh 2>&1 | grep -E 'analysis: [0-9]+ roots|AOT-eligible|error|Error|rror:' || true
 tests/build_game.sh | tail -1
 tests/coverage_check.sh "${ROUTES[@]}" | tail -4

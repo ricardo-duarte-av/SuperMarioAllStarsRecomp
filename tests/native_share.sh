@@ -9,7 +9,7 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
-ROUTES=("$@"); [ ${#ROUTES[@]} -gt 0 ] || ROUTES=(route_attract route_menus route_fight_gabby route_win_next route_lose route_circuit_minor route_circuit_major route_circuit_world route_circuit_special)
+ROUTES=("$@"); [ ${#ROUTES[@]} -gt 0 ] || ROUTES=(route_attract route_smb1 route_ll route_smb2 route_smb3)
 mkdir -p build-game/share
 for r in "${ROUTES[@]}"; do for mode in native interp; do
   ( COVERAGE=1 tests/run_route.sh "tests/$r.txt" $mode "$ROOT/build-game/share/$r-$mode" > "build-game/share/$r-$mode.log" 2>&1
