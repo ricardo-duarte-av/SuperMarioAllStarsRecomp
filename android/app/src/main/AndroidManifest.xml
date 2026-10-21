@@ -25,6 +25,17 @@
         <!-- Landscape only (SDL would otherwise allow any rotation for a resizable window). -->
         <meta-data android:name="SDL_ENV.SDL_ORIENTATIONS" android:value="LandscapeLeft LandscapeRight" />
 
+        <!-- First screen: asks once for the player's own ROM, then opens the game. -->
+        <activity android:name="com.tanookistudios.smas.RomActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Material.NoActionBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity android:name="com.tanookistudios.smas.SmasActivity"
             android:label="@string/app_name"
             android:alwaysRetainTaskState="true"
@@ -33,10 +44,6 @@
             android:configChanges="layoutDirection|locale|grammaticalGender|fontScale|fontWeightAdjustment|orientation|uiMode|screenLayout|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
             android:preferMinimalPostProcessing="true"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
             <intent-filter>
                 <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
             </intent-filter>
