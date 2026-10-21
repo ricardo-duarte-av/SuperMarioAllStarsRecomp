@@ -47,7 +47,7 @@ set(SMAS_SOURCES
 )
 if(ANDROID)
     # SDL's Android activity loads libmain.so and calls its SDL_main (src/main.c).
-    add_library(SuperMarioAllStarsRecomp SHARED ${SMAS_SOURCES})
+    add_library(SuperMarioAllStarsRecomp SHARED ${SMAS_SOURCES} src/smas_android.c)
     set_target_properties(SuperMarioAllStarsRecomp PROPERTIES OUTPUT_NAME main)
     target_link_libraries(SuperMarioAllStarsRecomp PRIVATE android log)
 else()

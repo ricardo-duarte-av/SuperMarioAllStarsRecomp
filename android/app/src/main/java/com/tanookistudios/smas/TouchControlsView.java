@@ -17,8 +17,8 @@ import org.libsdl.app.SDLActivity;
 /**
  * On-screen SNES controller drawn over the game. Every control presses the same key the desktop
  * keyboard uses (README "Controls"), through SDL's own key path, so the game needs no changes:
- * D-pad = arrows, B = Z, A = X, Y = A, X = S, L = C, R = V, Start = Enter, Select = Right Shift,
- * menu = Escape.
+ * D-pad = arrows, B = Z, A = X, Y = A, X = S, L = C, R = V, Start = Enter, Select = Right Shift.
+ * The menu button opens GameMenu.
  *
  * Multitouch: each finger presses whatever is under it and follows it as it slides. Between B and Y
  * (and A and X) a finger presses both, for running jumps. The controls hide while a game controller
@@ -120,6 +120,13 @@ public class TouchControlsView extends View implements InputManager.InputDeviceL
     private static boolean contains(int[] a, int v) { for (int x : a) if (x == v) return true; return false; }
 
     private void set(int c, boolean on) {
+        if (c == MENU) {                            // the menu button opens the in-game menu (GameMenu)
+            down[c] = false;
+            if (on && getContext() instanceof SmasActivity && ((SmasActivity) getContext()).menu != null)
+                ((SmasActivity) getContext()).menu.open();
+            invalidate();
+            return;
+        }
         down[c] = on;
         if (on) { SDLActivity.onNativeKeyDown(KEYS[c]); performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY); }
         else SDLActivity.onNativeKeyUp(KEYS[c]);

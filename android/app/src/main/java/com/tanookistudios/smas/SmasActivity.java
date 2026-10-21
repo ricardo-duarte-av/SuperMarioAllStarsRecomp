@@ -2,6 +2,7 @@ package com.tanookistudios.smas;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowInsets;
@@ -19,10 +20,29 @@ public class SmasActivity extends SDLActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // The on-screen controller sits over the game's picture.
-        if (mLayout != null)
-            mLayout.addView(new TouchControlsView(this),
-                    new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        // The on-screen controller sits over the game's picture, and the menu over both.
+        if (mLayout != null) {
+            ViewGroup.LayoutParams full = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT);
+            mLayout.addView(new TouchControlsView(this), full);
+            menu = new GameMenu(this);
+            mLayout.addView(menu, full);
+        }
+    }
+
+    GameMenu menu;
+
+    /** Back (gesture or button) and a controller's Home button open and close the menu. */
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        int k = event.getKeyCode();
+        if (menu != null && (k == KeyEvent.KEYCODE_BACK || k == KeyEvent.KEYCODE_BUTTON_MODE)) {
+            if (event.getAction() == KeyEvent.ACTION_UP) {
+                if (menu.isOpen()) menu.close(); else menu.open();
+            }
+            return true;
+        }
+        return super.dispatchKeyEvent(event);
     }
 
     /** Full screen: hide the status and navigation bars while playing (a swipe from the edge shows them). */
