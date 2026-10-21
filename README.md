@@ -32,7 +32,7 @@ Every version and its notes are on the [Releases page](https://github.com/Tanook
    - **Android:** open the downloaded **SuperMarioAllStars-Android.apk**. If Android asks, allow your browser or
      file app to install apps ("Install unknown apps"), then tap **Install**. The first time you open it, tap
      **Choose file** and pick your game file (a `.zip` with it inside works too).
-2. The launcher asks for your game file. Pick your own **Super Mario All-Stars (USA)** `.sfc` file.
+2. The launcher asks for your game file. Pick your own **Super Mario All-Stars (USA) (Super Mario All-Stars - 25th Anniversary)** `.sfc` file: the 2010 25th Anniversary re-release. The 1993 cartridge, plain "Super Mario All-Stars (USA)", is a different file and is not accepted.
    The launcher checks it and shows **ROM verified** when it's the right one.
 3. Set any options you like (the **Game** button has the cheats and sound switches), then press **Play**.
    Pick a game on the cartridge's own Select Game screen, just like on the console.
@@ -41,7 +41,7 @@ No game files come with this download. You need your own copy of the cartridge's
 
 | | |
 |---|---|
-| Game | Super Mario All-Stars (USA) |
+| Game | Super Mario All-Stars (USA) (Super Mario All-Stars - 25th Anniversary) |
 | SHA-256 | `411c7036750fbc79d60b84602414dbe713074de8204d3c4a5ad762679c103c61` |
 
 ### Controls
@@ -113,7 +113,7 @@ You need your own ROM for this too: the build reads it to translate the game, an
 
 ```sh
 ./setup.sh                                  # fetches the engine at the tested versions and applies patches/
-cp "/path/to/Super Mario All-Stars (USA).sfc" rom/smas.sfc
+cp "/path/to/Super Mario All-Stars (USA) (Super Mario All-Stars - 25th Anniversary).sfc" rom/smas.sfc
 bash tools/regen.sh                         # translates your ROM into C (kept out of git)
 cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
 cmake --build build
