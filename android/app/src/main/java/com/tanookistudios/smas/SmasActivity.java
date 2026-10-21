@@ -1,5 +1,12 @@
 package com.tanookistudios.smas;
 
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowInsets;
+import android.view.WindowInsetsController;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,6 +16,33 @@ import org.libsdl.app.SDLActivity;
 
 /** The game's activity. SDL is linked statically into libmain.so, so that is the only library to load. */
 public class SmasActivity extends SDLActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // The on-screen controller sits over the game's picture.
+        if (mLayout != null)
+            mLayout.addView(new TouchControlsView(this),
+                    new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+    }
+
+    /** Full screen: hide the status and navigation bars while playing (a swipe from the edge shows them). */
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (!hasFocus) return;
+        if (Build.VERSION.SDK_INT >= 30) {
+            WindowInsetsController c = getWindow().getInsetsController();
+            if (c != null) {
+                c.hide(WindowInsets.Type.systemBars());
+                c.setSystemBarsBehavior(WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+            }
+        } else {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+        }
+    }
+
     @Override
     protected String[] getLibraries() {
         return new String[] { "main" };
