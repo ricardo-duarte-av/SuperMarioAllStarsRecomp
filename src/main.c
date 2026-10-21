@@ -31,6 +31,8 @@
 #include "recomp_launcher.h"
 #include "smas_ui.h"
 
+#include <stdio.h>
+
 #ifndef __ANDROID__
 #define SDL_MAIN_HANDLED 1
 #endif
@@ -81,5 +83,17 @@ static const SnesDesktopHostGame kGameHost = {
 #endif
 int main(int argc, char **argv)
 {
+#ifdef __ANDROID__
+    /* Android has no terminal: keep the host's messages (progress, frame rate, errors) in log.txt in the
+     * app's folder, which `adb pull` and a player's bug report can reach. */
+    const char *dir = SDL_GetAndroidExternalStoragePath();
+    if (dir) {
+        char path[1024];
+        snprintf(path, sizeof path, "%s/log.txt", dir);
+        if (freopen(path, "w", stderr)) setvbuf(stderr, NULL, _IOLBF, 0);
+        snprintf(path, sizeof path, "%s/log-out.txt", dir);
+        if (freopen(path, "w", stdout)) setvbuf(stdout, NULL, _IOLBF, 0);
+    }
+#endif
     return snesrecomp_desktop_main(&kGameHost, argc, argv);
 }

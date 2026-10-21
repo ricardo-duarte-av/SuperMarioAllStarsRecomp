@@ -36,7 +36,7 @@ set(SNESRECOMP_ENABLE_MODS ON CACHE BOOL
     "Mod package loader + trusted plugins (required for every title)" FORCE)
 include(${SNESRECOMP_ROOT}/runner/runner.cmake)
 
-add_executable(SuperMarioAllStarsRecomp
+set(SMAS_SOURCES
     ${SNESRECOMP_RUNNER_SOURCES}
     src/main.c
     src/host_contract.c
@@ -45,6 +45,14 @@ add_executable(SuperMarioAllStarsRecomp
     src/smas_extras.c
     src/smas_ui.c
 )
+if(ANDROID)
+    # SDL's Android activity loads libmain.so and calls its SDL_main (src/main.c).
+    add_library(SuperMarioAllStarsRecomp SHARED ${SMAS_SOURCES})
+    set_target_properties(SuperMarioAllStarsRecomp PROPERTIES OUTPUT_NAME main)
+    target_link_libraries(SuperMarioAllStarsRecomp PRIVATE android log)
+else()
+    add_executable(SuperMarioAllStarsRecomp ${SMAS_SOURCES})
+endif()
 
 # ROM identity. rom_identity.txt is the one place the digests live: the build
 # turns it into snesrecomp_rom_identity.h (SNESRECOMP_ROM_EXPECTED_SHA256 and
@@ -117,6 +125,9 @@ if(NOT EXISTS "${RECOMP_UI_ROOT}/recomp_ui.cmake")
         "Run: ./setup.sh")
 endif()
 include(${RECOMP_UI_ROOT}/recomp_ui.cmake)
+# shortcut: Android has no launcher, Esc menu or rebuild wizard yet (they draw with desktop OpenGL);
+# it boots straight into the game. Add them when the touch UI lands.
+if(NOT ANDROID)
 # BOXART stages launcher_assets/img/boxart.tga beside the exe; the launcher
 # shows assets/img/boxart.tga by default. EXISTS-guarded in recomp_ui.cmake,
 # so this configures cleanly before any art is fetched.
@@ -132,6 +143,7 @@ recomp_target_launcher_ui(SuperMarioAllStarsRecomp CONSOLE snes
 # RecompLauncherCGameInfo.
 target_sources(SuperMarioAllStarsRecomp PRIVATE
     ${SNESRECOMP_ROOT}/host/snesrecomp_codegen_host.c)
+endif()
 target_include_directories(SuperMarioAllStarsRecomp PRIVATE
     ${SNESRECOMP_ROOT}/host
     ${RECOMP_UI_ROOT}/src)
@@ -149,9 +161,11 @@ add_custom_command(TARGET SuperMarioAllStarsRecomp POST_BUILD
 
 # The in-game menu (Esc): recomp-ui's runtime menu drawn by Dear ImGui on a
 # private hidden OpenGL context, then blended over the frozen game by the host.
+if(NOT ANDROID)
 target_sources(SuperMarioAllStarsRecomp PRIVATE
     ${SNESRECOMP_ROOT}/host/snes_runtime_menu_gl.cpp)
 target_compile_definitions(SuperMarioAllStarsRecomp PRIVATE SNESRECOMP_RUNTIME_MENU=1)
+endif()
 
 # Maddie's signature for the launcher's About page (assets/img beside the program).
 add_custom_command(TARGET SuperMarioAllStarsRecomp POST_BUILD

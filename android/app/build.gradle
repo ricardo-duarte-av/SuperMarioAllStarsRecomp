@@ -1,0 +1,46 @@
+plugins {
+    id 'com.android.application'
+}
+
+// The game's version comes from the repository's VERSION file, like the desktop builds.
+def gameVersion = file('../../VERSION').text.trim()
+// Reuse an SDL3 source tree that is already on disk (any desktop build fetched one) instead of
+// downloading it again; otherwise the engine downloads its pinned SDL3 release itself.
+def sdlSource = ['../../build-win/_deps/sdl3-src', '../../build/_deps/sdl3-src']
+        .collect { file(it) }.find { new File(it, 'CMakeLists.txt').exists() }
+
+android {
+    namespace = "com.tanookistudios.smas"
+    compileSdkVersion 35
+    ndkVersion = "28.2.13676358"
+    defaultConfig {
+        applicationId "com.tanookistudios.smas"
+        minSdkVersion 24
+        targetSdkVersion 35
+        versionCode 1
+        versionName gameVersion
+        externalNativeBuild {
+            cmake {
+                arguments "-DANDROID_PLATFORM=android-24", "-DANDROID_STL=c++_static",
+                          "-DCMAKE_BUILD_TYPE=Release"
+                if (sdlSource != null) arguments "-DSNESRECOMP_SDL3_SOURCE_DIR=${sdlSource.absolutePath}"
+                abiFilters 'arm64-v8a'
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            // The same CMakeLists.txt as the desktop builds; it builds libmain.so on Android.
+            path '../../CMakeLists.txt'
+            version '3.22.1'
+        }
+    }
+    lint {
+        abortOnError = false
+    }
+}

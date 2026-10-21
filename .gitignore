@@ -23,3 +23,10 @@ recomp/funcs.h
 *.smc
 *.srm
 __pycache__/
+# Android build outputs and the local SDK path
+android/local.properties
+android/.gradle/
+android/build/
+android/app/build/
+android/app/.cxx/
+!android/app/src/main/res/**/*.png
