@@ -2,7 +2,7 @@
   <img src="assets/icon/smas-256.png" width="128" alt="Super Mario All-Stars icon">
 </p>
 
-<h1 align="center">Super Mario All-Stars, native for Mac, Windows and Linux</h1>
+<h1 align="center">Super Mario All-Stars, native for Mac, Windows, Linux and Android</h1>
 
 <p align="center">
   The 1993 Super Nintendo collection (Super Mario Bros., The Lost Levels, Super Mario Bros. 2 and 3),<br>
@@ -19,6 +19,7 @@
 | **Mac** (Apple chip or Intel, macOS 11+) | [**SuperMarioAllStars-Mac.zip**](https://github.com/TanookiStudios/SuperMarioAllStarsRecomp/releases/latest/download/SuperMarioAllStars-Mac.zip) | Signed and notarized by Apple |
 | **Windows** (64-bit) | [**SuperMarioAllStars-Windows.zip**](https://github.com/TanookiStudios/SuperMarioAllStarsRecomp/releases/latest/download/SuperMarioAllStars-Windows.zip) | |
 | **Linux** (64-bit, most desktops from 2020 on) | [**SuperMarioAllStars-Linux.tar.gz**](https://github.com/TanookiStudios/SuperMarioAllStarsRecomp/releases/latest/download/SuperMarioAllStars-Linux.tar.gz) | |
+| **Android** (64-bit phones and tablets, Android 7+) | [**SuperMarioAllStars-Android.apk**](https://github.com/TanookiStudios/SuperMarioAllStarsRecomp/releases/latest/download/SuperMarioAllStars-Android.apk) | Not on Google Play: install the APK |
 
 Every version and its notes are on the [Releases page](https://github.com/TanookiStudios/SuperMarioAllStarsRecomp/releases).
 
@@ -28,6 +29,9 @@ Every version and its notes are on the [Releases page](https://github.com/Tanook
    - **Mac:** drag **Super Mario All-Stars** into Applications (or anywhere) and double-click it.
    - **Windows:** open the folder and double-click **SuperMarioAllStars.exe**.
    - **Linux:** open the folder and double-click **SuperMarioAllStars** (or run `./SuperMarioAllStars`).
+   - **Android:** open the downloaded **SuperMarioAllStars-Android.apk**. If Android asks, allow your browser or
+     file app to install apps ("Install unknown apps"), then tap **Install**. The first time you open it, tap
+     **Choose file** and pick your game file (a `.zip` with it inside works too).
 2. The launcher asks for your game file. Pick your own **Super Mario All-Stars (USA)** `.sfc` file.
    The launcher checks it and shows **ROM verified** when it's the right one.
 3. Set any options you like (the **Game** button has the cheats and sound switches), then press **Play**.
@@ -54,6 +58,10 @@ No game files come with this download. You need your own copy of the cartridge's
 | Start | Enter |
 | Select | Right Shift |
 | **Menu** | **Esc** |
+
+**On Android** an on-screen SNES controller sits beside the picture (it hides while a controller is
+connected), and the ☰ button, the Back gesture or a controller's Home button opens the menu: cheats,
+sound, save and load states, reset, About.
 
 **Controllers:** plug one in and play, no setup. Xbox, PlayStation (3, 4 and 5), Switch Pro and Joy-Con,
 8BitDo, and over 2,000 other pads are recognized by name. Any other USB pad still works with a standard layout.
@@ -111,6 +119,7 @@ cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ```
 
+Android: `tools/make_android.sh` (signed release APK; the Gradle project is in `android/`).
 Release builds: `tools/make_app.sh --notarize` (Mac), `tools/make_windows_zip.sh` (Windows, cross-built on a Mac),
 `tools/make_linux.sh` (Linux, built in an Ubuntu 20.04 container). Screenshots: `tools/capture-screenshots.sh`.
 
