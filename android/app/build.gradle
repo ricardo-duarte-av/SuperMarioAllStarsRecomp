@@ -9,8 +9,24 @@ def gameVersion = file('../../VERSION').text.trim()
 def sdlSource = ['../../build-win/_deps/sdl3-src', '../../build/_deps/sdl3-src']
         .collect { file(it) }.find { new File(it, 'CMakeLists.txt').exists() }
 
+// Release signing key, kept OUTSIDE the repository (tools/make_android.sh says where). Without it the
+// release build is left unsigned and make_android.sh refuses to package it.
+def signingFile = new File(System.getenv('SMAS_ANDROID_SIGNING') ?: "${System.getProperty('user.home')}/.smas-android-signing/key.properties")
+def signing = new Properties()
+if (signingFile.exists()) signingFile.withInputStream { signing.load(it) }
+
 android {
     namespace = "com.tanookistudios.smas"
+    signingConfigs {
+        release {
+            if (signing.storeFile) {
+                storeFile file(signing.storeFile)
+                storePassword signing.storePassword
+                keyAlias signing.keyAlias
+                keyPassword signing.keyPassword
+            }
+        }
+    }
     compileSdkVersion 35
     ndkVersion = "28.2.13676358"
     defaultConfig {
@@ -31,6 +47,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            if (signing.storeFile) signingConfig signingConfigs.release
         }
     }
     externalNativeBuild {
