@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
-# Cross-build the Windows version on this Mac and zip it as
+# Cross-build the Windows version and zip it as
 # dist/SuperMarioAllStars-Windows.zip (copied to ~/Downloads).
-# Needs: brew install mingw-w64, vendor/ from setup.sh, and the ROM at
-# rom/smas.sfc (only to scan the zip contents for ROM bytes).
+# Needs MinGW-w64 (Mac: brew install mingw-w64; Linux: your distribution's
+# MinGW-w64 package, or just Docker/Podman: without a MinGW on the host the
+# build runs in the container from tools/windows/Dockerfile), vendor/ from
+# setup.sh, src/gen/ from tools/regen.sh, and the ROM at rom/smas.sfc (only to
+# scan the zip contents for ROM bytes).
 # The zip holds no ROM: the launcher asks for one. SDL3 is built from source
 # by the engine's CMake and linked into the .exe (static), so the zip needs
 # no SDL3.dll; this script checks that every DLL the .exe imports is either
@@ -10,6 +13,18 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 OBJDUMP=x86_64-w64-mingw32-objdump
+if ! command -v x86_64-w64-mingw32-gcc >/dev/null && [ -z "${SMAS_IN_CONTAINER:-}" ] && command -v docker >/dev/null; then
+    echo "No MinGW-w64 on this machine: building in the tools/windows container."
+    docker image inspect smas-windows-build >/dev/null 2>&1 || docker build -t smas-windows-build tools/windows
+    AS_ME=()   # rootful Docker on Linux would leave root-owned files behind
+    if [ "$(uname -s)" = Linux ] && ! docker info -f '{{.SecurityOptions}}' 2>/dev/null | grep -q rootless; then
+        AS_ME=(--user "$(id -u):$(id -g)" -e HOME=/tmp)
+    fi
+    docker run --rm "${AS_ME[@]}" -e SMAS_IN_CONTAINER=1 -v "$PWD":/src -w /src smas-windows-build tools/make_windows_zip.sh
+    mkdir -p "$HOME/Downloads" && cp -f dist/SuperMarioAllStars-Windows.zip "$HOME/Downloads/"
+    echo "$HOME/Downloads/SuperMarioAllStars-Windows.zip"
+    exit 0
+fi
 # SDL3 is hidden from CMake on purpose: Homebrew's SDL3 is a Mac library, and
 # the engine must build its own Windows SDL3 (static) instead.
 cmake -S . -B build-win -G Ninja -DCMAKE_BUILD_TYPE=Release \
@@ -50,5 +65,6 @@ python3 -I tools/release_scan.py "$OUT"
 
 ( cd dist && zip -qr SuperMarioAllStars-Windows.zip SuperMarioAllStars-Windows )
 # Finished games always go to Downloads (Maddie, 14 Oct 2026).
-cp -f dist/SuperMarioAllStars-Windows.zip "$HOME/Downloads/"
+[ -n "${SMAS_IN_CONTAINER:-}" ] && exit 0   # the host copies it
+mkdir -p "$HOME/Downloads" && cp -f dist/SuperMarioAllStars-Windows.zip "$HOME/Downloads/"
 echo "$HOME/Downloads/SuperMarioAllStars-Windows.zip"

@@ -1,16 +1,26 @@
 #!/usr/bin/env bash
-# Build the Linux release on this Mac inside an Ubuntu 20.04 container (Colima)
-# and pack dist/SuperMarioAllStars-Linux.tar.gz, copied to ~/Downloads. No ROM inside.
-# Needs: brew install colima docker; colima start --vm-type vz --vz-rosetta --arch aarch64
-# (colima stop afterwards), vendor/ from setup.sh, and the ROM at
-# rom/smas.sfc (only to scan the package for ROM bytes).
+# Build the Linux release inside an Ubuntu 20.04 container and pack
+# dist/SuperMarioAllStars-Linux.tar.gz, copied to ~/Downloads. No ROM inside.
+# Needs Docker (or Podman with its docker alias), vendor/ from setup.sh,
+# src/gen/ from tools/regen.sh, and the ROM at rom/smas.sfc (only to scan the
+# package for ROM bytes).
+#   Linux:  any Docker install (rootless works).
+#   Mac:    brew install colima docker; colima start --vm-type vz --vz-rosetta --arch aarch64
+#           (colima stop afterwards). Colima's socket is used when it exists.
 # SDL3 is built from source inside the container and linked in statically.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p work/docker-config; [ -f work/docker-config/config.json ] || echo '{}' > work/docker-config/config.json
-export DOCKER_CONFIG="$PWD/work/docker-config" DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
+export DOCKER_CONFIG="$PWD/work/docker-config"
+[ -S "$HOME/.colima/default/docker.sock" ] && export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
 docker image inspect smas-linux-build >/dev/null 2>&1 || docker build --platform linux/amd64 -t smas-linux-build tools/linux
-docker run --rm --platform linux/amd64 -v "$PWD":/src smas-linux-build /src/tools/linux/build.sh >/dev/null
+# Rootful Docker on Linux would leave build-linux/ owned by root: build as the calling user instead.
+# (Docker Desktop, Colima and rootless Docker already map the container's root to you.)
+AS_ME=()
+if [ "$(uname -s)" = Linux ] && ! docker info -f '{{.SecurityOptions}}' 2>/dev/null | grep -q rootless; then
+    AS_ME=(--user "$(id -u):$(id -g)" -e HOME=/tmp)
+fi
+docker run --rm --platform linux/amd64 "${AS_ME[@]}" -v "$PWD":/src smas-linux-build /src/tools/linux/build.sh >/dev/null
 OUT=dist/SuperMarioAllStars-Linux
 rm -rf "$OUT" "$OUT.tar.gz"; mkdir -p "$OUT"
 # The program must be named SuperMarioAllStars (the CMake target keeps its name).
@@ -32,5 +42,5 @@ python3 -I tools/release_scan.py "$OUT"
 
 tar -C dist -czf "$OUT.tar.gz" SuperMarioAllStars-Linux
 # Finished games always go to Downloads (Maddie, 14 Oct 2026).
-cp -f "$OUT.tar.gz" "$HOME/Downloads/"
+mkdir -p "$HOME/Downloads" && cp -f "$OUT.tar.gz" "$HOME/Downloads/"
 echo "$HOME/Downloads/SuperMarioAllStars-Linux.tar.gz"

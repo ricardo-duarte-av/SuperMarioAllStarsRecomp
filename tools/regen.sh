@@ -7,7 +7,7 @@
 # there is one place to change when a revision changes.
 #
 # Flags:
-#   --rom <path>  ROM to generate from. Defaults to SNESRECOMP_ROM, a known
+#   --rom <path>  ROM to generate from. Defaults to SNESRECOMP_ROM, rom/smas.sfc, a known
 #                 filename at the repo root, then the path in rom.cfg (which
 #                 the setup wizard writes). The ROM does not have to live in
 #                 the repo — keeping it on your own drive is the better
@@ -66,7 +66,7 @@ EXPECTED_SHA256="${SNESRECOMP_EXPECTED_SHA256:-$("$PYTHON" "$IDENTITY" "$ROOT/ro
 # The framework owns the search: --rom, then SNESRECOMP_ROM, then a known
 # name at the root, then rom.cfg (the path the setup wizard recorded).
 RESOLVE=(resolve-rom --project-root "$ROOT"
-         --name "smas.sfc" --name "supermarioallstars.sfc" --name "supermarioallstars.smc")
+         --name "rom/smas.sfc" --name "smas.sfc" --name "supermarioallstars.sfc" --name "supermarioallstars.smc")
 if [ -n "$ROM" ]; then RESOLVE+=(--rom "$ROM"); fi
 if ! ROM=$("$PYTHON" "$CLI" "${RESOLVE[@]}"); then
   echo "regen.sh: pass --rom /path/to/smas.sfc, set SNESRECOMP_ROM, put it" >&2

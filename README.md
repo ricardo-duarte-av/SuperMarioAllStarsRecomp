@@ -12,7 +12,36 @@
 
 **Website:** [supermarioallstars.tanookistudios.com](https://supermarioallstars.tanookistudios.com)
 
+## Which ROM you need
+
+This version works with **one exact file**: your own dump of the original 1993 US cartridge,
+**Super Mario All-Stars (USA)**. Any other file is refused, including the 2010 re-release
+"Super Mario All-Stars (USA) (Super Mario All-Stars - 25th Anniversary)", Europe/Japan versions,
+"Super Mario All-Stars + Super Mario World", and patched or hacked ROMs.
+
+| | |
+|---|---|
+| Game | Super Mario All-Stars (USA), the 1993 cartridge |
+| Internal title | `SUPER MARIO ALL_STARS` |
+| Size | 2,097,152 bytes (2 MiB, no copier header) |
+| **SHA-256** | **`a9e3e57d591e995e8e0dd228b619b6aed42205eaf55316fa8ff33f236b3a32b3`** |
+| SHA-1 | `c05817c5b7df2fbfe631563e0b37237156a8f6b6` |
+| MD5 | `53c038150ba00d5f8d8574b4d36283f2` |
+| CRC32 | `925637c7` |
+
+To check your file's SHA-256:
+- **Linux:** `sha256sum "Super Mario All-Stars (USA).sfc"`
+- **Mac:** `shasum -a 256 "Super Mario All-Stars (USA).sfc"`
+- **Windows (PowerShell):** `Get-FileHash "Super Mario All-Stars (USA).sfc"`
+
+If your file has a 512-byte copier header (2,097,664 bytes), strip it first; the hash above is of the file without it.
+The game's translated code is generated from this ROM, so a build only ever accepts the ROM it was made from.
+
 ## Download
+
+> **Note:** the downloads below are the original project's builds. They were made from the 25th Anniversary
+> ROM and will **not** accept the 1993 cartridge. For the 1993 cartridge, build it yourself
+> ([Building it yourself](#building-it-yourself)): every platform has a one-command package script.
 
 | Your computer | Download | |
 |---|---|---|
@@ -32,17 +61,13 @@ Every version and its notes are on the [Releases page](https://github.com/Tanook
    - **Android:** open the downloaded **SuperMarioAllStars-Android.apk**. If Android asks, allow your browser or
      file app to install apps ("Install unknown apps"), then tap **Install**. The first time you open it, tap
      **Choose file** and pick your game file (a `.zip` with it inside works too).
-2. The launcher asks for your game file. Pick your own **Super Mario All-Stars (USA) (Super Mario All-Stars - 25th Anniversary)** `.sfc` file: the 2010 25th Anniversary re-release. The 1993 cartridge, plain "Super Mario All-Stars (USA)", is a different file and is not accepted.
+2. The launcher asks for your game file. Pick your own **Super Mario All-Stars (USA)** `.sfc` file: the 1993 cartridge. The 2010 re-release, "Super Mario All-Stars (USA) (Super Mario All-Stars - 25th Anniversary)", is a different file and is not accepted.
    The launcher checks it and shows **ROM verified** when it's the right one.
 3. Set any options you like (the **Game** button has the cheats and sound switches), then press **Play**.
    Pick a game on the cartridge's own Select Game screen, just like on the console.
 
-No game files come with this download. You need your own copy of the cartridge's data. The one that works is:
-
-| | |
-|---|---|
-| Game | Super Mario All-Stars (USA) (Super Mario All-Stars - 25th Anniversary) |
-| SHA-256 | `411c7036750fbc79d60b84602414dbe713074de8204d3c4a5ad762679c103c61` |
+No game files come with this download. You need your own copy of the cartridge's data: see
+[Which ROM you need](#which-rom-you-need) (SHA-256 `a9e3e57d591e995e8e0dd228b619b6aed42205eaf55316fa8ff33f236b3a32b3`).
 
 ### Controls
 
@@ -109,19 +134,48 @@ can be remapped in **Settings**, and the **Esc** menu opens from a controller wi
 
 ## Building it yourself
 
-You need your own ROM for this too: the build reads it to translate the game, and nothing from it is stored in this repository.
+You need your own ROM for this too: the build reads it to translate the game, and nothing from it is stored in this
+repository. It must be the 1993 cartridge, **Super Mario All-Stars (USA)**, SHA-256
+`a9e3e57d591e995e8e0dd228b619b6aed42205eaf55316fa8ff33f236b3a32b3`. A build only accepts the ROM it was made from.
+
+### What you need first
+
+Everywhere: Git, Python 3.9+, CMake 3.20+, Ninja, a C/C++ compiler, and Rust (the translator's analyzer is
+written in Rust: install it from [rustup.rs](https://rustup.rs), then open a new terminal so `cargo` is on your PATH).
+
+- **Mac:** `xcode-select --install`, then `brew install cmake ninja python`.
+- **Linux (Fedora):** `sudo dnf install gcc gcc-c++ cmake ninja-build python3 git libX11-devel libXext-devel
+  libXrandr-devel libXcursor-devel libXi-devel libXfixes-devel libXScrnSaver-devel libxkbcommon-devel wayland-devel
+  wayland-protocols-devel libdecor-devel mesa-libEGL-devel mesa-libGL-devel pipewire-devel pulseaudio-libs-devel alsa-lib-devel`
+- **Linux (Ubuntu/Debian):** `sudo apt install build-essential cmake ninja-build python3 git libx11-dev libxext-dev
+  libxrandr-dev libxcursor-dev libxi-dev libxfixes-dev libxss-dev libxkbcommon-dev libwayland-dev wayland-protocols
+  libdecor-0-dev libegl1-mesa-dev libgl1-mesa-dev libpipewire-0.3-dev libpulse-dev libasound2-dev`
+- **Windows:** build inside [WSL](https://learn.microsoft.com/windows/wsl/install) (Ubuntu) with the Linux steps,
+  then make the Windows version with `tools/make_windows_zip.sh` (below).
+
+### Build and play
 
 ```sh
 ./setup.sh                                  # fetches the engine at the tested versions and applies patches/
-cp "/path/to/Super Mario All-Stars (USA) (Super Mario All-Stars - 25th Anniversary).sfc" rom/smas.sfc
-bash tools/regen.sh                         # translates your ROM into C (kept out of git)
+cp "/path/to/Super Mario All-Stars (USA).sfc" rom/smas.sfc
+bash tools/regen.sh                         # checks your ROM, then translates it into C (kept out of git)
 cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
 cmake --build build
+./build/SuperMarioAllStarsRecomp            # the launcher opens; pick the same ROM
 ```
 
-Android: `tools/make_android.sh` (signed release APK; the Gradle project is in `android/`).
-Release builds: `tools/make_app.sh --notarize` (Mac), `tools/make_windows_zip.sh` (Windows, cross-built on a Mac),
-`tools/make_linux.sh` (Linux, built in an Ubuntu 20.04 container). Screenshots: `tools/capture-screenshots.sh`.
+### Packaged versions (after the steps above, up to `tools/regen.sh`)
+
+| For | Command | Runs on | Needs |
+|---|---|---|---|
+| Linux | `tools/make_linux.sh` | Linux or Mac | Docker (or Colima on a Mac). Builds in Ubuntu 20.04, so it runs on most desktops from 2020 on |
+| Windows | `tools/make_windows_zip.sh` | Linux, Mac or WSL | MinGW-w64 (`brew install mingw-w64`), or just Docker: without MinGW it builds in a container |
+| Android | `tools/make_android.sh` | Linux, Mac or WSL | Android SDK (`ANDROID_HOME`), JDK 17+. Gradle fetches the NDK. Makes a signing key on first use |
+| Mac | `tools/make_app.sh` | Mac | Signed ad-hoc unless you have a Developer ID (`--notarize` for Apple's notarization) |
+
+Each one writes to `dist/` and copies the result to `~/Downloads`. The Android script keeps its signing key in
+`~/.smas-android-signing/`: back it up, because Android only installs updates signed with the same key.
+Screenshots: `tools/capture-screenshots.sh`.
 
 ## About Maddie
 

@@ -23,13 +23,13 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 /**
- * First screen. The game needs the player's own Super Mario All-Stars (USA) (25th Anniversary) ROM: this asks for it once
+ * First screen. The game needs the player's own Super Mario All-Stars (USA) ROM (the 1993 cartridge): this asks for it once
  * with Android's file picker (a .sfc/.smc, or a .zip holding one), checks it is exactly the right dump,
  * and copies it into the app's folder as smas.sfc with a rom.cfg naming it. Every later launch goes
  * straight to the game.
  */
 public class RomActivity extends Activity {
-    static final String EXPECTED_SHA256 = "411c7036750fbc79d60b84602414dbe713074de8204d3c4a5ad762679c103c61";
+    static final String EXPECTED_SHA256 = BuildConfig.ROM_SHA256;   // from rom_identity.txt
     private static final int PICK = 1;
     private static final int ROM_SIZE = 2 * 1024 * 1024;
     private TextView message;
@@ -38,7 +38,7 @@ public class RomActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (romInstalled()) { startGame(); return; }
-        showPicker("Pick your own Super Mario All-Stars (USA) (Super Mario All-Stars - 25th Anniversary) game file (.sfc, or a .zip with one inside). The 1993 cartridge is a different file and won't work. "
+        showPicker("Pick your own Super Mario All-Stars (USA) game file, the 1993 cartridge (.sfc, or a .zip with one inside). "
                 + "No game data comes with this app.");
     }
 
@@ -104,7 +104,7 @@ public class RomActivity extends Activity {
             byte[] rom = readRom(data.getData());
             if (rom == null) { message.setText("That file doesn't hold a SNES game. Pick the .sfc file (or a .zip with it inside)."); return; }
             if (!EXPECTED_SHA256.equals(sha256(rom))) {
-                message.setText("That's not the right game file. It needs Super Mario All-Stars (USA) (Super Mario All-Stars - 25th Anniversary), not the 1993 cartridge: the one with SHA-256\n"
+                message.setText("That's not the right game file. It needs Super Mario All-Stars (USA), the 1993 cartridge: the one with SHA-256\n"
                         + EXPECTED_SHA256);
                 return;
             }

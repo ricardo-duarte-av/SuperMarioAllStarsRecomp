@@ -14,10 +14,10 @@ rom_file        = smas.sfc
 # Every digest of the bare image (copier header stripped), so the Retro
 # catalog can take a submission's identity from this file rather than ask
 # the submitter to hash the ROM again. The build verifies on crc32/sha256.
-expected_crc32  = 1cb2fe8e
-expected_md5    = c66c5378a8b29bd3bb2e696e6593da0e
-expected_sha1   = 79c1e471d54a9ae0a291f982774e04970a998b85
-expected_sha256 = 411c7036750fbc79d60b84602414dbe713074de8204d3c4a5ad762679c103c61
+expected_crc32  = 925637c7
+expected_md5    = 53c038150ba00d5f8d8574b4d36283f2
+expected_sha1   = c05817c5b7df2fbfe631563e0b37237156a8f6b6
+expected_sha256 = a9e3e57d591e995e8e0dd228b619b6aed42205eaf55316fa8ff33f236b3a32b3
 rom_size        = 2097152
 mapping         = lorom
 region          = USA

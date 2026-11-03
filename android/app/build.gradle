@@ -4,6 +4,12 @@ plugins {
 
 // The game's version comes from the repository's VERSION file, like the desktop builds.
 def gameVersion = file('../../VERSION').text.trim()
+// The ROM the player must pick, from rom_identity.txt (the same file the desktop build reads), so a
+// change of revision is made in one place. The app's translated code is generated from that ROM.
+def romSha256 = file('../../rom_identity.txt').readLines()
+        .collect { it.replaceAll(/#.*/, '').trim() }
+        .find { it ==~ /expected_sha256\s*=.*/ }?.split('=', 2)?.getAt(1)?.trim()?.replaceAll(/["']/, '')
+if (!(romSha256 ==~ /[0-9a-f]{64}/)) throw new GradleException("rom_identity.txt has no expected_sha256")
 // Reuse an SDL3 source tree that is already on disk (any desktop build fetched one) instead of
 // downloading it again; otherwise the engine downloads its pinned SDL3 release itself.
 def sdlSource = ['../../build-win/_deps/sdl3-src', '../../build/_deps/sdl3-src']
@@ -35,6 +41,7 @@ android {
         targetSdkVersion 35
         versionCode 1
         versionName gameVersion
+        buildConfigField "String", "ROM_SHA256", "\"${romSha256}\""
         externalNativeBuild {
             cmake {
                 arguments "-DANDROID_PLATFORM=android-24", "-DANDROID_STL=c++_static",
@@ -56,6 +63,9 @@ android {
             path '../../CMakeLists.txt'
             version '3.22.1'
         }
+    }
+    buildFeatures {
+        buildConfig = true
     }
     lint {
         abortOnError = false
