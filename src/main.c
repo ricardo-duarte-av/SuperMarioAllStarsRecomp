@@ -63,6 +63,12 @@ static const SnesDesktopHostGame kGameHost = {
     .build_version       = SNES_GAME_VERSION,
     .game_info           = &kGameInfo,
     .num_players         = 2,
+#ifndef __ANDROID__
+    /* GLSL shader presets (libretro format) on the OpenGL presenter: the launcher's Shader row lists
+     * assets/shaders/ (tools/update_shaders.py) and Browse takes any .glsl/.glslp on disk. Android draws
+     * through SDL_Renderer on GLES, which has no shader path. */
+    .shader_supported    = 1,
+#endif
     /* Battery-backed SRAM shows the launcher's SAVES panel. Leave NULL for a
      * title without one. The path is exe-relative. */
     .sram_path           = "saves/save.srm",

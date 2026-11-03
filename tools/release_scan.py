@@ -55,8 +55,13 @@ def scan(folder, rom):
     samples = pick_samples(rom)
     problems, nfiles, nbytes = [], 0, 0
     for dirpath, dirnames, filenames in os.walk(folder):
+        # The bundled libretro shaders keep upstream's layout, and crt-royale's lives in a "src"
+        # folder of .glsl text. Allow that one name inside assets/shaders only; every file there
+        # still gets the file-type and ROM-content checks below.
+        parts = os.path.relpath(dirpath, folder).replace(os.sep, "/").split("/")
+        in_shaders = any(parts[i:i + 2] == ["assets", "shaders"] for i in range(len(parts)))
         for d in dirnames:
-            if d in BAD_DIRS:
+            if d in BAD_DIRS and not (in_shaders and d == "src"):
                 problems.append(f"forbidden folder: {os.path.join(dirpath, d)}")
         for name in filenames:
             p = os.path.join(dirpath, name)

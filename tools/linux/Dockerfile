@@ -1,7 +1,7 @@
 # Build machine for the Linux release: Ubuntu 20.04 (glibc 2.31) so the
 # program runs on nearly every Linux desktop from 2020 on. Players need none
 # of this; it only builds.
-FROM --platform=linux/amd64 ubuntu:20.04
+FROM --platform=linux/amd64 docker.io/library/ubuntu:20.04
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
         ca-certificates curl git build-essential ninja-build pkg-config python3-pip \

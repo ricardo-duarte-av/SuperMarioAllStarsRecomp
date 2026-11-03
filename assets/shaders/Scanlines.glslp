@@ -1,0 +1,7 @@
+# res-independent-scanlines.glslp from libretro/glsl-shaders (1aaabbebdd88),
+# written by tools/update_shaders.py: edit that, not this file.
+shaders = 1
+
+shader0 = "_libretro/scanlines/shaders/res-independent-scanlines.glsl"
+filter_linear0 = false
+scale_type0 = viewport

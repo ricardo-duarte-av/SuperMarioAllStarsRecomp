@@ -1,0 +1,6 @@
+# crt-geom.glslp from libretro/glsl-shaders (1aaabbebdd88),
+# written by tools/update_shaders.py: edit that, not this file.
+shaders = 1
+
+shader0 = "_libretro/crt/shaders/crt-geom.glsl"
+filter_linear0 = false

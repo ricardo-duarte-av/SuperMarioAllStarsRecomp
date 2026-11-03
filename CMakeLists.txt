@@ -159,6 +159,19 @@ add_custom_command(TARGET SuperMarioAllStarsRecomp POST_BUILD
         ${CMAKE_SOURCE_DIR}/assets/controllers/gamecontrollerdb.txt
         $<TARGET_FILE_DIR:SuperMarioAllStarsRecomp>/assets/gamecontrollerdb.txt)
 
+# Bundled shader presets (tools/update_shaders.py), listed by the launcher's Shader row.
+# Desktop only: Android has no OpenGL presenter. A target of its own that runs on EVERY build (a
+# POST_BUILD step would only run when the program relinks, leaving presets removed from
+# assets/shaders/ in the build folder and in the packages made from it).
+if(NOT ANDROID)
+add_custom_target(smas_shaders ALL
+    COMMAND ${CMAKE_COMMAND} -E remove_directory $<TARGET_FILE_DIR:SuperMarioAllStarsRecomp>/assets/shaders
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/assets/shaders
+            $<TARGET_FILE_DIR:SuperMarioAllStarsRecomp>/assets/shaders
+    COMMENT "Staging assets/shaders")
+add_dependencies(smas_shaders SuperMarioAllStarsRecomp)
+endif()
+
 # The in-game menu (Esc): recomp-ui's runtime menu drawn by Dear ImGui on a
 # private hidden OpenGL context, then blended over the frozen game by the host.
 if(NOT ANDROID)

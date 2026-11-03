@@ -101,6 +101,12 @@ can be remapped in **Settings**, and the **Esc** menu opens from a controller wi
   are mostly translated into native code; Super Mario Bros. 2 and 3 run the game's original code in a built-in
   interpreter, at full speed.
 - **Crisp at any size.** Whole-number scaling keeps every pixel sharp, from a small window to a 4K screen.
+- **Shaders (Mac, Windows, Linux).** CRT and smoothing filters: in the launcher open **Settings** and pick one in
+  the **Shader** row (CRT Lottes, CRT Royale, CRT Geom, CRT Easymode, CRT Aperture, CRT Hyllian, CRT Pi, zFast CRT,
+  Scanlines, Sharp Bilinear, Pixellate, xBRZ Freescale and more). Choosing one switches the picture to OpenGL.
+  **Browse** loads any other libretro `.glsl` / `.glslp` shader, for example from
+  [libretro/glsl-shaders](https://github.com/libretro/glsl-shaders), and **Folder** opens `assets/shaders`, where
+  presets you drop in join the list. Not on Android.
 - **Launcher.** Set everything before you play: display, sound, controls, cheats.
 - **In-game menu (Esc).** Change settings, save and load states, reset the game, or close it.
 - **Sound.** Volume, and a mute switch for each of the Super Nintendo's eight sound voices.
@@ -144,6 +150,11 @@ Everywhere: Git, Python 3.9+, CMake 3.20+, Ninja, a C/C++ compiler, and Rust (th
 written in Rust: install it from [rustup.rs](https://rustup.rs), then open a new terminal so `cargo` is on your PATH).
 
 - **Mac:** `xcode-select --install`, then `brew install cmake ninja python`.
+- **Linux, nothing installed on your system:** with [Podman](https://podman.io) or Docker you can skip the
+  development packages below. Run `./setup.sh`, copy the ROM and run `bash tools/regen.sh` as below, then
+  `tools/make_linux.sh` instead of the two `cmake` lines. It builds everything inside an Ubuntu 20.04 container and
+  leaves the finished game in `dist/SuperMarioAllStars-Linux/` (and `~/Downloads/SuperMarioAllStars-Linux.tar.gz`).
+  Rust is still needed on your system for `tools/regen.sh`.
 - **Linux (Fedora):** `sudo dnf install gcc gcc-c++ cmake ninja-build python3 git libX11-devel libXext-devel
   libXrandr-devel libXcursor-devel libXi-devel libXfixes-devel libXScrnSaver-devel libxkbcommon-devel wayland-devel
   wayland-protocols-devel libdecor-devel mesa-libEGL-devel mesa-libGL-devel pipewire-devel pulseaudio-libs-devel alsa-lib-devel`
@@ -168,14 +179,16 @@ cmake --build build
 
 | For | Command | Runs on | Needs |
 |---|---|---|---|
-| Linux | `tools/make_linux.sh` | Linux or Mac | Docker (or Colima on a Mac). Builds in Ubuntu 20.04, so it runs on most desktops from 2020 on |
-| Windows | `tools/make_windows_zip.sh` | Linux, Mac or WSL | MinGW-w64 (`brew install mingw-w64`), or just Docker: without MinGW it builds in a container |
+| Linux | `tools/make_linux.sh` | Linux or Mac | Docker or Podman (Colima on a Mac). Builds in Ubuntu 20.04, so it runs on most desktops from 2020 on |
+| Windows | `tools/make_windows_zip.sh` | Linux, Mac or WSL | MinGW-w64 (`brew install mingw-w64`), or just Docker or Podman: without MinGW it builds in a container |
 | Android | `tools/make_android.sh` | Linux, Mac or WSL | Android SDK (`ANDROID_HOME`), JDK 17+. Gradle fetches the NDK. Makes a signing key on first use |
 | Mac | `tools/make_app.sh` | Mac | Signed ad-hoc unless you have a Developer ID (`--notarize` for Apple's notarization) |
 
-Each one writes to `dist/` and copies the result to `~/Downloads`. The Android script keeps its signing key in
+Each one writes to `dist/` and copies the result to `~/Downloads`. The container scripts use Docker when it runs,
+otherwise Podman; `CONTAINER_ENGINE=podman` picks Podman. The Android script keeps its signing key in
 `~/.smas-android-signing/`: back it up, because Android only installs updates signed with the same key.
-Screenshots: `tools/capture-screenshots.sh`.
+Screenshots: `tools/capture-screenshots.sh`. Bundled shaders: `python3 tools/update_shaders.py` refreshes
+`assets/shaders/` from a pinned libretro commit (licenses in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)).
 
 ## About Maddie
 

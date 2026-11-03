@@ -1,0 +1,6 @@
+# sharp-bilinear-simple.glslp from libretro/glsl-shaders (1aaabbebdd88),
+# written by tools/update_shaders.py: edit that, not this file.
+shaders = 1
+
+shader0 = "_libretro/interpolation/shaders/sharp-bilinear-simple.glsl"
+filter_linear0 = true

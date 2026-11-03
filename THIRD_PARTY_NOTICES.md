@@ -365,6 +365,30 @@ A 26x26 sprite sheet of every flag the font ships, indexed by region code
 `tools/gen_flag_sheet.py`. Bundled because Windows' Segoe UI Emoji has no
 flag glyphs, and so that a country reads the same on every platform.
 
+## Shader presets (shipped in assets/shaders/, desktop only)
+
+Copied unchanged from [libretro/glsl-shaders](https://github.com/libretro/glsl-shaders) at commit
+`1aaabbebdd88a8a89a82edfdc94e10580c99ffdd` by `tools/update_shaders.py`; every file keeps its own license
+header. They are separate data files: the GPU driver compiles them when you pick one, and the program
+works the same with the folder removed. Only presets whose every file carries a license are bundled.
+
+| Preset | Author(s) | License |
+|---|---|---|
+| CRT Lottes, CRT Lottes Fast | Timothy Lottes (RetroArch port by hunterk) | Public domain |
+| Sharp Bilinear | rsn8887, after Themaister | Public domain |
+| Scanlines (res-independent-scanlines) | RiskyJumps | Public domain |
+| Pixellate | Fes | ISC-style permissive license (in the file) |
+| CRT Hyllian | Hyllian | MIT |
+| xBRZ Freescale | Hyllian; xBRZ by Zenju | MIT, with xBRZ concepts under GPL-3.0 |
+| CRT Easymode, CRT Aperture | EasyMode | GPL |
+| CRT Geom | cgwg, Themaister, DOLLS | GPL-2.0-or-later |
+| CRT Pi | davej | GPL-2.0-or-later |
+| zFast CRT | Greg Hogan (SoltanGris42) | GPL-2.0-or-later |
+| CRT Royale (with its mask textures) | TroggleMonkey | GPL-2.0-or-later, some helper files MIT |
+
+The GPL texts: <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html> and <https://www.gnu.org/licenses/gpl-3.0.html>.
+The source of each shader is the shader itself (it ships as text) and the commit linked above.
+
 ## Other bundled libraries
 
 - stb_image, stb_image_write, stb_truetype (Sean Barrett): public domain or MIT, at your option.

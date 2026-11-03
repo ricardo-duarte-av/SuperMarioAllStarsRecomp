@@ -2,7 +2,7 @@
 # Cross-build the Windows version and zip it as
 # dist/SuperMarioAllStars-Windows.zip (copied to ~/Downloads).
 # Needs MinGW-w64 (Mac: brew install mingw-w64; Linux: your distribution's
-# MinGW-w64 package, or just Docker/Podman: without a MinGW on the host the
+# MinGW-w64 package, or just Docker or Podman: without a MinGW on the host the
 # build runs in the container from tools/windows/Dockerfile), vendor/ from
 # setup.sh, src/gen/ from tools/regen.sh, and the ROM at rom/smas.sfc (only to
 # scan the zip contents for ROM bytes).
@@ -13,14 +13,13 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 OBJDUMP=x86_64-w64-mingw32-objdump
-if ! command -v x86_64-w64-mingw32-gcc >/dev/null && [ -z "${SMAS_IN_CONTAINER:-}" ] && command -v docker >/dev/null; then
-    echo "No MinGW-w64 on this machine: building in the tools/windows container."
-    docker image inspect smas-windows-build >/dev/null 2>&1 || docker build -t smas-windows-build tools/windows
-    AS_ME=()   # rootful Docker on Linux would leave root-owned files behind
-    if [ "$(uname -s)" = Linux ] && ! docker info -f '{{.SecurityOptions}}' 2>/dev/null | grep -q rootless; then
-        AS_ME=(--user "$(id -u):$(id -g)" -e HOME=/tmp)
-    fi
-    docker run --rm "${AS_ME[@]}" -e SMAS_IN_CONTAINER=1 -v "$PWD":/src -w /src smas-windows-build tools/make_windows_zip.sh
+if ! command -v x86_64-w64-mingw32-gcc >/dev/null && [ -z "${SMAS_IN_CONTAINER:-}" ] \
+        && { command -v docker >/dev/null || command -v podman >/dev/null; }; then
+    source tools/container.sh; pick_container_engine
+    echo "No MinGW-w64 on this machine: building in the tools/windows container with $ENGINE."
+    $ENGINE image inspect smas-windows-build >/dev/null 2>&1 || $ENGINE build -t smas-windows-build tools/windows
+    $ENGINE run --rm ${RUN_OPTS[@]+"${RUN_OPTS[@]}"} -e SMAS_IN_CONTAINER=1 -v "$PWD":/src$MOUNT_OPT -w /src \
+        smas-windows-build tools/make_windows_zip.sh
     mkdir -p "$HOME/Downloads" && cp -f dist/SuperMarioAllStars-Windows.zip "$HOME/Downloads/"
     echo "$HOME/Downloads/SuperMarioAllStars-Windows.zip"
     exit 0
