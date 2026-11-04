@@ -10,7 +10,7 @@
   <b>Free. Bring your own copy of the game.</b>
 </p>
 
-**Website:** [supermarioallstars.tanookistudios.com](https://supermarioallstars.tanookistudios.com)
+**Original Repo Website:** [supermarioallstars.tanookistudios.com](https://supermarioallstars.tanookistudios.com)
 
 ## Which ROM you need
 
